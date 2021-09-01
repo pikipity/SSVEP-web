@@ -1,0 +1,25 @@
+{
+	"groups": [
+		{
+			"keys": "WallBack_jpg,black_color_jpg,white_color_jpg",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/WallBack.jpg",
+			"type": "image",
+			"name": "WallBack_jpg"
+		},
+		{
+			"url": "assets/white_color.jpg",
+			"type": "image",
+			"name": "white_color_jpg"
+		},
+		{
+			"url": "assets/black_color.jpg",
+			"type": "image",
+			"name": "black_color_jpg"
+		}
+	]
+}

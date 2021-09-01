@@ -1,0 +1,20 @@
+{
+	"skins": {
+		"eui.fightScene": "resource/eui_skins/fightScene.exml",
+		"eui.downClock": "resource/eui_skins/downClock.exml",
+		"eui.errorScene": "resource/eui_skins/errorScene.exml",
+		"eui.startScene": "resource/eui_skins/startScene.exml",
+		"eui.startButton": "resource/eui_skins/startButton.exml",
+		"eui.EndScene": "resource/eui_skins/EndScene.exml"
+	},
+	"autoGenerateExmlsList": true,
+	"exmls": [
+		"resource/eui_skins/downClock.exml",
+		"resource/eui_skins/EndScene.exml",
+		"resource/eui_skins/errorScene.exml",
+		"resource/eui_skins/fightScene.exml",
+		"resource/eui_skins/startButton.exml",
+		"resource/eui_skins/startScene.exml"
+	],
+	"path": "resource/default.thm.json"
+}
