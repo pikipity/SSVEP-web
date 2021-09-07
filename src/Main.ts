@@ -133,7 +133,7 @@ class Main extends eui.UILayer {
                     break;
                 }
                 case 4:{
-                    console.log('Flash')
+                    console.log('End')
                     this.currentGameScene = new EndScene();
                     break;
                 }

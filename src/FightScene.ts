@@ -32,8 +32,12 @@ class FightScene extends eui.Component{
     private clock_area: eui.Group;
     private clock = new downClock();
 
-    private freqList = [8,9,10,11,8.4,9.4,10.4,11.4,8.8,9.8,10.8,11.8]; //[10,6,7.5,5,15]
-    private phaseList= [0,Math.PI/2,0,Math.PI/2,Math.PI/2,0,Math.PI/2,0,0,Math.PI/2,0,Math.PI/2];
+    private freqList = [8  ,9  ,10  ,11  ,
+                        8.4,9.4,10.4,11.4,
+                        8.8,9.8,10.8,11.8]; //[10,6,7.5,5,15]
+    private phaseList= [0        ,Math.PI/2,0        ,Math.PI/2,
+                        Math.PI/2,0        ,Math.PI/2,0        ,
+                        0        ,Math.PI/2,0        ,Math.PI/2];
 
     private dispTrigger = -1;
 
