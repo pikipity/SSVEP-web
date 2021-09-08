@@ -4,8 +4,8 @@ load('data.mat','subj_data');
 fs=256;
 start_t=0.14;%1/fs;%0.5+0.14;
 channel_select=1:9;
-block_num=[9];
-freqs=reshape([8 8.4 8.8; 9 9.4 9.8; 10 10.4 10.8; 11 11.4 11.8],1,12);
+block_num=[3 6];
+freqs=reshape([8 8.4 8.8; 9 9.4 9.9; 10 10.4 10.8; 11 11.4 11.8],1,12);
 [~,sort_freqs_I]=sort(freqs);
 phases=reshape([0 1 0; 1 0 1; 0 1 0; 1 0 1]./2.*pi,1,12);
 trial_num=length(freqs);
@@ -188,17 +188,12 @@ for T_i=1:length(possible_T)
     end
 end
 
-acc=[];%zeros(subject_no,length(possible_T),size(test_block,1));
+acc=zeros(subject_no,length(possible_T),size(test_block,1));
 for T_i=1:length(possible_T)
-    for sub_no=1:subject_no
-        if sub_no==1
-            select_block=[1 2 6 7 8 9];
-        else
-            select_block=1:size(test_block,1);
-        end
-        for test_run_i=1:length(select_block)
-            tmp=squeeze(res_store(T_i,select_block(test_run_i),sub_no,:,:));
-            acc(sub_no,T_i,test_run_i)=sum(tmp,'all')/numel(tmp);
+    for test_run=1:size(test_block,1)
+        for sub_no=1:subject_no
+            tmp=squeeze(res_store(T_i,test_run,sub_no,:,:));
+            acc(sub_no,T_i,test_run)=sum(tmp,'all')/numel(tmp);
         end
     end
 end
