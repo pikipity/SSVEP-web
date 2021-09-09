@@ -70,13 +70,14 @@ class Main extends eui.UILayer {
             await RES.loadConfig("resource/default.res.json", "resource/");
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
-            this.stage.removeChild(loadingView);
             //
             this.socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
             this.socket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
             this.socket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
             this.socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
             //this.socket.connect('',)
+            //
+            this.stage.removeChild(loadingView);
         }
         catch (e) {
             console.error(e);
