@@ -5,11 +5,13 @@
 		"eui.errorScene": "resource/eui_skins/errorScene.exml",
 		"eui.startScene": "resource/eui_skins/startScene.exml",
 		"eui.startButton": "resource/eui_skins/startButton.exml",
+		"eui.returnButton": "resource/eui_skins/returnButton.exml",
 		"eui.EndScene": "resource/eui_skins/EndScene.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
 		"resource/eui_skins/downClock.exml",
+		"resource/eui_skins/returnButton.exml",
 		"resource/eui_skins/EndScene.exml",
 		"resource/eui_skins/errorScene.exml",
 		"resource/eui_skins/fightScene.exml",

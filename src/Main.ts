@@ -100,7 +100,43 @@ class Main extends eui.UILayer {
     private currentGameScene;
     private trial=1;
 
+    private dispFPS = true;
+    private dispFPSNum = 30;
+    private dispFPScurrentNum = -1;
+    private PreTime = 0;
+    private sumFPS = 0;
+    private sumNum = 0;
+    private FPSlabel: egret.TextField = new egret.TextField();
+
+    private feedbackStr = '';
+    private roomStr = '';
+
     protected Game(): void {
+        if(this.dispFPS){
+            if(this.dispFPScurrentNum<0){
+                //Init
+                this.PreTime = egret.getTimer();
+                this.FPSlabel.text = 'None';
+                this.roomStr = 'None';
+                this.FPSlabel.size = 20;
+                this.dispFPScurrentNum=0;
+            }else{
+                // Update fps and time
+                let currentTime=egret.getTimer();
+                this.sumFPS+=1000/(currentTime-this.PreTime);
+                this.sumNum++;
+                this.PreTime = currentTime;
+                // Update display
+                this.dispFPScurrentNum++;
+                if(this.dispFPScurrentNum>this.dispFPSNum){
+                    this.dispFPScurrentNum=0;
+                    this.FPSlabel.text = 'FPS: '+Math.floor(this.sumFPS/this.sumNum*100)/100 + '\n' +
+                                          'Room: '+this.roomStr;
+                    this.sumFPS = 0;
+                    this.sumNum = 0;
+                }
+            }
+        }
         if(this.nextGameState!=this.currentGameState){
             // remove old scene
             if(this.currentGameState!=-1){
@@ -113,22 +149,24 @@ class Main extends eui.UILayer {
             switch(this.currentGameState){
                 case 0:{
                     console.log('Start Scene');
+                    this.feedbackStr = '';
+                    this.trial=1;
                     this.currentGameScene = new StartScene();
                     break;
                 }
                 case 1:{
                     console.log('Cue')
-                    this.currentGameScene = new FightScene(1,this.trial);
+                    this.currentGameScene = new FightScene(1,this.trial,this.feedbackStr);
                     break;
                 }
                 case 2:{
                     console.log('Flash')
-                    this.currentGameScene = new FightScene(2,this.trial);
+                    this.currentGameScene = new FightScene(2,this.trial,this.feedbackStr);
                     break;
                 }
                 case 3:{
                     console.log('Rest')
-                    this.currentGameScene = new FightScene(3,this.trial);
+                    this.currentGameScene = new FightScene(3,this.trial,this.feedbackStr);
                     this.trial++;
                     break;
                 }
@@ -144,6 +182,7 @@ class Main extends eui.UILayer {
                 }
             }
             this.addChild(this.currentGameScene);
+            this.addChild(this.FPSlabel)
         }else{
             // check state
             if(this.currentGameScene.checkState()>=0){

@@ -15,6 +15,10 @@ declare module skins{
 	}
 }
 declare module skins{
+	class returnButton extends eui.Skin{
+	}
+}
+declare module skins{
 	class startButton extends eui.Skin{
 	}
 }

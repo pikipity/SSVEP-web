@@ -28,6 +28,7 @@ class FightScene extends eui.Component{
     private  flashAreaList;
     private  trigger_area: eui.Group;
     private  triggerDisp;
+    private  feedback_text_67: eui.Label;
 
     private clock_area: eui.Group;
     private clock = new downClock();
@@ -38,6 +39,11 @@ class FightScene extends eui.Component{
     private phaseList= [0        ,Math.PI/2,0        ,Math.PI/2,
                         Math.PI/2,0        ,Math.PI/2,0        ,
                         0        ,Math.PI/2,0        ,Math.PI/2];
+
+    private keyList =   ["A","B","C","D",
+                         "E","F","G","H",
+                         "I","J","K","L",
+                         "M","N","P","Q"];
 
     private dispTrigger = -1;
 
@@ -53,7 +59,7 @@ class FightScene extends eui.Component{
     //      2 -> flash
     //      3 -> rest
 
-    public constructor(state: number, trail: number){
+    public constructor(state: number, trail: number, feedback_str: string){
         super();
         this.currentGameState = state;
         this.currentTrail = trail;
@@ -84,6 +90,11 @@ class FightScene extends eui.Component{
                         this.cue_6,
                         this.cue_9,
                         this.cue_12];
+        // add feedback text
+        if(feedback_str.length>60){
+            feedback_str = feedback_str.slice(-60);
+        }
+        this.feedback_text_67.$setText(feedback_str)
         // add clock
         this.clock.width = this.clock_area.width;
         this.clock.height = this.clock_area.height;
@@ -131,11 +142,17 @@ class FightScene extends eui.Component{
         //init cue
         if(state==1){
             for(let i=0;i<this.cueList.length;i++){
+                this.cueList[i].textColor = 0xFF0000;
                 if(i==(trail-1)){
                     this.cueList[i].$setText('+');
                 }else{
                     this.cueList[i].$setText('');
                 }
+            }
+        }else if(state==2){
+            for(let i=0;i<this.cueList.length;i++){
+                this.cueList[i].textColor = 0xFFFFFF;
+                this.cueList[i].$setText(this.keyList[i]);
             }
         }else{
             for(let i=0;i<this.cueList.length;i++){
@@ -220,10 +237,10 @@ class FightScene extends eui.Component{
                 if(this.currentTrail<this.flashList.length){
                     this.gameState=1; // -> cue
                 }else{
-                    this.gameState=4; // -> cue
+                    this.gameState=4; // -> end
                 }
             }else{
-                this.gameState=99; // -> cue
+                this.gameState=99; // -> error
             }
         }
     }
