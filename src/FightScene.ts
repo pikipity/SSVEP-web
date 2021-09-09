@@ -1,4 +1,6 @@
 class FightScene extends eui.Component{
+    private backbutton_comp: eui.Button
+
     private  flashButton1_area: eui.Group;
     private  cue_1: eui.Label;
     private  flashButton2_area: eui.Group;
@@ -90,6 +92,8 @@ class FightScene extends eui.Component{
                         this.cue_6,
                         this.cue_9,
                         this.cue_12];
+        this.backbutton_comp.touchEnabled = true;
+        this.backbutton_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.beginState, this)
         // add feedback text
         if(feedback_str.length>60){
             feedback_str = feedback_str.slice(-60);
@@ -276,6 +280,10 @@ class FightScene extends eui.Component{
 
     public checkState(){
         return this.gameState
+    }
+
+    private beginState(){
+        this.gameState = 0;
     }
 
     // public constructor(){

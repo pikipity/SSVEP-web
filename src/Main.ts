@@ -71,6 +71,12 @@ class Main extends eui.UILayer {
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
+            //
+            this.socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+            this.socket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+            this.socket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
+            this.socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
+            //this.socket.connect('',)
         }
         catch (e) {
             console.error(e);
@@ -89,6 +95,46 @@ class Main extends eui.UILayer {
         })
     }
 
+    
+
+    private dispFPS = true;
+    private dispFPSNum = 30;
+    private dispFPScurrentNum = -1;
+    private PreTime = 0;
+    private sumFPS = 0;
+    private sumNum = 0;
+    private FPSlabel: egret.TextField = new egret.TextField();
+
+    private feedbackStr = '';
+    private idStr = '';
+    private roomStr = '';
+
+    private socket = new egret.WebSocket();
+    private connectFlag = false;
+
+    private onSocketOpen(){
+        console.log('Connect OK');
+        this.connectFlag=true;
+        // const cmd = '{"name":"SSVEP_stim"}';
+        // this.socket.writeUTF(cmd);
+    }
+
+    private onReceiveMessage(e:egret.Event){
+        const msg = this.socket.readUTF();
+        console.log('Receive '+msg);
+    }
+
+    private onSocketClose(){
+        this.roomStr = 'None';
+        this.idStr = 'None';
+        this.connectFlag=false;
+        console.log('Close');
+    }
+
+    private onSocketError(){
+        console.log('Error');
+    }
+
     private currentGameState = -1;
     private nextGameState = 0;
     // state:
@@ -100,24 +146,14 @@ class Main extends eui.UILayer {
     private currentGameScene;
     private trial=1;
 
-    private dispFPS = true;
-    private dispFPSNum = 30;
-    private dispFPScurrentNum = -1;
-    private PreTime = 0;
-    private sumFPS = 0;
-    private sumNum = 0;
-    private FPSlabel: egret.TextField = new egret.TextField();
-
-    private feedbackStr = '';
-    private roomStr = '';
-
     protected Game(): void {
         if(this.dispFPS){
             if(this.dispFPScurrentNum<0){
-                //Init
+                //Init dsp display
                 this.PreTime = egret.getTimer();
                 this.FPSlabel.text = 'None';
                 this.roomStr = 'None';
+                this.idStr = 'None';
                 this.FPSlabel.size = 20;
                 this.dispFPScurrentNum=0;
             }else{
@@ -126,12 +162,13 @@ class Main extends eui.UILayer {
                 this.sumFPS+=1000/(currentTime-this.PreTime);
                 this.sumNum++;
                 this.PreTime = currentTime;
-                // Update display
+                // Update fps display
                 this.dispFPScurrentNum++;
                 if(this.dispFPScurrentNum>this.dispFPSNum){
                     this.dispFPScurrentNum=0;
-                    this.FPSlabel.text = 'FPS: '+Math.floor(this.sumFPS/this.sumNum*100)/100 + '\n' +
-                                          'Room: '+this.roomStr;
+                    this.FPSlabel.text = 'FPS: ' + Math.floor(this.sumFPS/this.sumNum*100)/100 + '\n' +
+                                         'ID: ' + this.idStr + '\n' +
+                                         'Room: ' + this.roomStr;
                     this.sumFPS = 0;
                     this.sumNum = 0;
                 }

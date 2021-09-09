@@ -1,4 +1,8 @@
 declare module skins{
+	class backButton extends eui.Skin{
+	}
+}
+declare module skins{
 	class downClock extends eui.Skin{
 	}
 }

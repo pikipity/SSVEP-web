@@ -39,8 +39,9 @@
 	<e:Group id="flashButton4_area" width="200" height="200" y="158.126" x="640">
 		<e:Label id="cue_4" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
 	</e:Group>
-	<e:Group id="clock_area" width="100" height="100" x="2.754" y="3.558"/>
+	<e:Group id="clock_area" width="100" height="100" left="0" top="0"/>
 	<e:Group id="trigger_area" width="100" bottom="1" height="100" left="1"/>
 	<e:Rect width="1460" height="50" fillColor="0xFFFFFF" horizontalCenter="0" top="30"/>
 	<e:Label id="feedback_text_67" horizontalCenter="0" top="30" width="1460" height="50" textColor="0x000000" textAlign="left" verticalAlign="middle"/>
+	<e:Button id="backbutton_comp" label="Button" skinName="skins.backButton" right="1" top="1" width="50" height="50"/>
 </e:Skin>

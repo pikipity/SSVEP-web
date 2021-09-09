@@ -6,10 +6,12 @@
 		"eui.startScene": "resource/eui_skins/startScene.exml",
 		"eui.startButton": "resource/eui_skins/startButton.exml",
 		"eui.returnButton": "resource/eui_skins/returnButton.exml",
-		"eui.EndScene": "resource/eui_skins/EndScene.exml"
+		"eui.EndScene": "resource/eui_skins/EndScene.exml",
+		"eui.backButton": "resource/eui_skins/backButton.exml"
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
+		"resource/eui_skins/backButton.exml",
 		"resource/eui_skins/downClock.exml",
 		"resource/eui_skins/returnButton.exml",
 		"resource/eui_skins/EndScene.exml",

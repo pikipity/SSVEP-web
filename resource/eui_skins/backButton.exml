@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.backButton"
+	 width="50"
+	height="50" xmlns:e="http://ns.egret.com/eui">
+	<e:Image width="50" height="50" x="0" y="0" source="return_bound_png"/>
+</e:Skin>
