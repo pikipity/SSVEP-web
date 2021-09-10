@@ -257,7 +257,6 @@ class Main extends eui.UILayer {
                         //
                         var self = this
                         this.socket = io.connect('http://127.0.0.1:5000/');
-                        this.socket.emit('addNewSSVEPStim','web_stimuli_12')
                         this.socket.on('connect',function(){
                             self.onSocketOpen()
                         })
@@ -285,6 +284,7 @@ class Main extends eui.UILayer {
                         this.socket.on('changeGameState',function(data){
                             self.onSocketChangeGameState(data)
                         })
+                        this.socket.emit('addNewSSVEPStim','web_stimuli_12')
                         //
                     }   
                     break;
