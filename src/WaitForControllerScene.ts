@@ -4,11 +4,12 @@ class WaitForControllerScene extends eui.Component{
     
     private gameState = -1;
 
-    public constructor(roomStr){
+    public constructor(idStr,roomStr){
         super();
         this.skinName = "resource/eui_skins/WaitForController.exml";
 
-        this.room_text.$setText('Room: '+roomStr+'\n'+
+        this.room_text.$setText('ID: '+idStr+'\n'+
+                                'Room: '+roomStr+'\n\n'+
                                 'Waiting for controller')
 
         this.returnbutton_comp.touchEnabled = true;

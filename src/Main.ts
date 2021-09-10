@@ -291,7 +291,7 @@ class Main extends eui.UILayer {
                 }
                 case 101:{
                     console.log('Wait for controller')
-                    this.currentGameScene = new WaitForControllerScene(this.roomStr);
+                    this.currentGameScene = new WaitForControllerScene(this.idStr,this.roomStr);
                     break;
                 }
                 case 102:{
