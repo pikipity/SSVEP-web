@@ -93,6 +93,7 @@ class Main extends eui.UILayer {
 
     private socket;
     private connect_flag = false;
+    private server_path = 'http://127.0.0.1:5000/'
 
     private onSocketOpen(){
         console.log('Connect')
@@ -256,7 +257,7 @@ class Main extends eui.UILayer {
                         console.log('Connect to Server')
                         //
                         var self = this
-                        this.socket = io.connect('http://127.0.0.1:5000/');
+                        this.socket = io.connect(this.server_path);
                         this.socket.on('connect',function(){
                             self.onSocketOpen()
                         })
