@@ -3,7 +3,8 @@
 	 width="1920"
 	height="1080" xmlns:e="http://ns.egret.com/eui">
 	<e:Rect width="1920" height="1080" x="0" y="0"/>
-	<e:Button id="startbutton_comp" label="Button" height="100" width="200" horizontalCenter="0" bottom="125" skinName="skins.startButton">
+	<e:Button id="startbutton_comp" label="Button" height="100" width="200" skinName="skins.startButton" y="855" horizontalCenter="0">
 	</e:Button>
-	<e:Label text="SSVEP" horizontalCenter="0" verticalCenter="0" size="60" textAlign="center"/>
+	<e:Label text="SSVEP" horizontalCenter="0.5" verticalCenter="-168" size="60" textAlign="center"/>
+	<e:Button id="ConnectServerButton" label="Button" y="701.48" skinName="skins.ConnectServerButton" horizontalCenter="0"/>
 </e:Skin>

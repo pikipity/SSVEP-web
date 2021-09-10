@@ -1,5 +1,6 @@
 class StartScene extends eui.Component{
     private startbutton_comp: eui.Button
+    private ConnectServerButton: eui.Button
 
     private gameState = -1;
 
@@ -9,6 +10,9 @@ class StartScene extends eui.Component{
 
         this.startbutton_comp.touchEnabled = true;
         this.startbutton_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.beginState, this)
+
+        this.ConnectServerButton.touchEnabled = true;
+        this.ConnectServerButton.addEventListener(egret.TouchEvent.TOUCH_TAP, this.connectServerFun, this)
         
     }
 
@@ -18,5 +22,9 @@ class StartScene extends eui.Component{
 
     public checkState(){
         return this.gameState
+    }
+
+    private connectServerFun(){
+        this.gameState = 100;
     }
 }

@@ -20,13 +20,22 @@ class client_info:
 class client_list:
     def __init__(self):
         self.list=[]
+        self.RoomNumList = []
     def addNewClient(self,userName,userID,roomID):
         newClient=client_info(userName,userID,roomID)
         self.addClient(newClient)
     def addClient(self,newClient):
         self.list.append(newClient)
     def removeClient_by_ID(self,existClientID):
+        existClientFlag, existClient = clientList.checkClient_by_ID(existClientID)
+        roomID=[]
+        for i in range(len(existClient)):
+            roomID.append(existClient[i].getRoom())
         self.list = list(filter(lambda x: x.getID()!=existClientID,self.list))
+        for i in range(len(roomID)):
+            existRoom, existRoomClient = clientList.checkClient_by_room(roomID[i])
+            if not existRoom:
+                self.deletRoom(roomID[i])
     def checkClient_by_ID(self,existClientID):
         clientInList = list(filter(lambda x: x.getID()==existClientID,self.list))
         if len(clientInList)==0:
@@ -39,6 +48,20 @@ class client_list:
             return False, clientInList
         else:
             return True, clientInList
+    def createNewRoom(self):
+        if(len(self.RoomNumList)==0):
+            newRoomNum=0
+        else:
+            for i in range(max(self.RoomNumList)+2):
+                if i not in self.RoomNumList:
+                    break
+            newRoomNum = i
+        self.RoomNumList.append(newRoomNum)
+        self.RoomNumList.sort()
+        return newRoomNum
+    def deletRoom(self,roomNum):
+        roomNum=int(roomNum)
+        self.RoomNumList = list(filter(lambda x: x!=roomNum,self.RoomNumList))
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = urandom(24)
@@ -76,7 +99,7 @@ def addNewSSVEPStim(Data):
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
     if not existClientFlag:
         # Create new client
-        roomID=str(uuid1())
+        roomID=str(clientList.createNewRoom())
         clientList.addNewClient(userName,userID,roomID)
         join_room(roomID)
         emit('CreateNewSSVEPStim',userID+','+roomID)
@@ -108,8 +131,8 @@ def addNewSSVEPAnalysis(Data):
         else:
             clientList.addNewClient(userName,userID,roomID)
             join_room(roomID)
-            emit('CreateNewSSVEPStim',userID+','+roomID)
-            print('CreateNewSSVEPStim: '+userID+','+roomID)
+            emit('CreateNewSSVEPAnalysis',userID+','+roomID)
+            print('CreateNewSSVEPAnalysis: '+userID+','+roomID)
             
 @socketio.on('SSVEPResponse')
 def receiveSSVEPResponse(Data):

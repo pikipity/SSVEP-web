@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.Connecting"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Label text="Connecting" size="60" horizontalCenter="0" verticalCenter="0"/>
+	<e:Button id="returnbutton_comp" label="Button" width="50" height="50" skinName="skins.backButton" right="0" top="0"/>
+</e:Skin>

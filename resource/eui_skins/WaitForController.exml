@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.WaitForController"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Label id="room_text" text="Room: " verticalAlign="middle" textAlign="center" size="50" width="769.363" horizontalCenter="0" verticalCenter="0"/>
+	<e:Button id="returnbutton_comp" label="Button" skinName="skins.backButton" right="0" top="0"/>
+</e:Skin>

@@ -12,13 +12,18 @@
 	"autoGenerateExmlsList": true,
 	"exmls": [
 		"resource/eui_skins/backButton.exml",
+		"resource/eui_skins/ConnectBreak.exml",
+		"resource/eui_skins/Connecting.exml",
+		"resource/eui_skins/ConnectServerButton.exml",
 		"resource/eui_skins/downClock.exml",
 		"resource/eui_skins/returnButton.exml",
 		"resource/eui_skins/EndScene.exml",
 		"resource/eui_skins/errorScene.exml",
 		"resource/eui_skins/fightScene.exml",
 		"resource/eui_skins/startButton.exml",
-		"resource/eui_skins/startScene.exml"
+		"resource/eui_skins/startScene.exml",
+		"resource/eui_skins/WaitForController.exml",
+		"resource/eui_skins/WaitForStart.exml"
 	],
 	"path": "resource/default.thm.json"
 }

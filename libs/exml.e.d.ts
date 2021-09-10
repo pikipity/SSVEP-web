@@ -3,6 +3,18 @@ declare module skins{
 	}
 }
 declare module skins{
+	class ConnectBreak extends eui.Skin{
+	}
+}
+declare module skins{
+	class Connecting extends eui.Skin{
+	}
+}
+declare module skins{
+	class ConnectServerButton extends eui.Skin{
+	}
+}
+declare module skins{
 	class downClock extends eui.Skin{
 	}
 }
@@ -28,5 +40,13 @@ declare module skins{
 }
 declare module skins{
 	class startScene extends eui.Skin{
+	}
+}
+declare module skins{
+	class WaitForController extends eui.Skin{
+	}
+}
+declare module skins{
+	class WaitForStart extends eui.Skin{
 	}
 }

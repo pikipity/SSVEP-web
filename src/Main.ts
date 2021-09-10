@@ -100,7 +100,12 @@ class Main extends eui.UILayer {
 
     private onSocketClose(){
         this.connect_flag = false;
+        this.roomStr = 'None';
+        this.idStr = 'None';
         console.log('Disconnect')
+        if(this.currentGameState>0){
+            this.nextGameState = 104
+        }
     }
 
     private onReceiveMessage(data){
@@ -128,6 +133,18 @@ class Main extends eui.UILayer {
         this.nextGameState = parseInt(data)
     }
 
+    // private onScoketReconnectionFail(){
+    //     try{
+    //         this.socket.disconnect();
+    //     }catch(error){
+    //         console.log(error)
+    //     }
+    // }
+
+    // private onSocketConnectError(){
+    //     this.socket.disconnect()
+    // }
+
     private dispFPS = true;
     private dispFPSNum = 30;
     private dispFPScurrentNum = -1;
@@ -151,6 +168,7 @@ class Main extends eui.UILayer {
     //    100 -> connect to server (display "connecting")
     //    101 -> wait for controller (display "Room ID and wait")
     //    102, 103 -> wait for start
+    //    104 -> connect break
     private currentGameScene;
     private trial=1;
 
@@ -177,7 +195,7 @@ class Main extends eui.UILayer {
                     this.FPSlabel.text = 'FPS: ' + Math.floor(this.sumFPS/this.sumNum*100)/100 + '\n' +
                                          'Connect: '+this.connect_flag.toString() + '\n' +
                                          ''+//'ID: ' + this.idStr + '\n' +
-                                         ''//'Room: ' + this.roomStr;
+                                         'Room: ' + this.roomStr;
                     this.sumFPS = 0;
                     this.sumNum = 0;
                 }
@@ -192,16 +210,22 @@ class Main extends eui.UILayer {
             }
             // build new scene
             this.currentGameState = this.nextGameState;
+            if(this.connect_flag){
+                this.socket.emit('changeGameState',this.currentGameState.toString())
+            }
             switch(this.currentGameState){
                 case 0:{
                     console.log('Start Scene');
                     this.feedbackStr = '';
                     this.trial=1;
-                    if(this.connect_flag){
+                    try{
                         this.socket.disconnect();
+                    }catch(error){
+                        console.log(error)
+                    }finally{
+                        this.currentGameScene = new StartScene();
+                        break;
                     }
-                    this.currentGameScene = new StartScene();
-                    break;
                 }
                 case 1:{
                     console.log('Cue')
@@ -225,6 +249,7 @@ class Main extends eui.UILayer {
                     break;
                 }
                 case 100:{
+                    this.currentGameScene = new ConnectingScene();
                     if(this.connect_flag){
                         console.log('Has been connected to server')    
                     }else{
@@ -248,6 +273,12 @@ class Main extends eui.UILayer {
                         this.socket.on('Error',function(data){
                             self.onSocketError(data)
                         })
+                        // this.socket.on('error',function(){
+                        //     self.onSocketConnectError()
+                        // })
+                        // this.socket.on('reconnect_failed',function(){
+                        //     self.onScoketReconnectionFail()
+                        // })
                         this.socket.on('ssvepResponse',function(data){
                             self.onSocketSSVEPResponse(data)
                         })
@@ -256,6 +287,33 @@ class Main extends eui.UILayer {
                         })
                         //
                     }   
+                    break;
+                }
+                case 101:{
+                    console.log('Wait for controller')
+                    this.currentGameScene = new WaitForControllerScene(this.roomStr);
+                    break;
+                }
+                case 102:{
+                    console.log('Wait for start')
+                    this.currentGameScene = new WaitForStartScene();
+                    break;
+                }
+                case 103:{
+                    console.log('Wait for start')
+                    this.currentGameScene = new WaitForStartScene();
+                    break;
+                }
+                case 104:{
+                    console.log('Connection Break')
+                    try{
+                        this.socket.disconnect();
+                    }catch(error){
+                        console.log(error)
+                    }finally{
+                        this.currentGameScene = new ConnectBreakScene();
+                        break;
+                    }
                 }
                 default:{
                     console.log('Error Build Game State !!');
@@ -274,9 +332,9 @@ class Main extends eui.UILayer {
                 this.nextGameState = this.currentGameScene.checkState();
             }
             // check whether needs re-connection
-            if(!this.connect_flag && this.nextGameState>100){
-                this.nextGameState = 0
-            }
+            // if(!this.connect_flag && this.nextGameState>100){
+            //     this.nextGameState = 104
+            // }
         }
     }
     
