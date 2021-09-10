@@ -63,6 +63,8 @@ class Main extends eui.UILayer {
         this.addEventListener(egret.Event.ENTER_FRAME, this.Game, this, false, 0);
     }
 
+    
+
     private async loadResource() {
         try {
             const loadingView = new LoadingUI();
@@ -70,13 +72,6 @@ class Main extends eui.UILayer {
             await RES.loadConfig("resource/default.res.json", "resource/");
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
-            //
-            this.socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
-            this.socket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
-            this.socket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
-            this.socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
-            //this.socket.connect('',)
-            //
             this.stage.removeChild(loadingView);
         }
         catch (e) {
@@ -96,7 +91,42 @@ class Main extends eui.UILayer {
         })
     }
 
-    
+    private socket;
+    private connect_flag = false;
+
+    private onSocketOpen(){
+        console.log('Connect')
+    }
+
+    private onSocketClose(){
+        this.connect_flag = false;
+        console.log('Disconnect')
+    }
+
+    private onReceiveMessage(data){
+        console.log(data)
+    }
+
+    private onSocketError(data){
+        console.log(data)
+    }
+
+    private CreateNewSSVEPStim(data){
+        let datasplit=data.split(",")
+        console.log(datasplit)
+        this.idStr = datasplit[0]
+        this.roomStr = datasplit[1]
+        this.connect_flag = true
+    }
+
+    private onSocketSSVEPResponse(data){
+        console.log('Response: '+data)
+    }
+
+    private onSocketChangeGameState(data){
+        console.log('Change state to '+data)
+        this.nextGameState = parseInt(data)
+    }
 
     private dispFPS = true;
     private dispFPSNum = 30;
@@ -110,32 +140,6 @@ class Main extends eui.UILayer {
     private idStr = '';
     private roomStr = '';
 
-    private socket = new egret.WebSocket();
-    private connectFlag = false;
-
-    private onSocketOpen(){
-        console.log('Connect OK');
-        this.connectFlag=true;
-        // const cmd = '{"name":"SSVEP_stim"}';
-        // this.socket.writeUTF(cmd);
-    }
-
-    private onReceiveMessage(e:egret.Event){
-        const msg = this.socket.readUTF();
-        console.log('Receive '+msg);
-    }
-
-    private onSocketClose(){
-        this.roomStr = 'None';
-        this.idStr = 'None';
-        this.connectFlag=false;
-        console.log('Close');
-    }
-
-    private onSocketError(){
-        console.log('Error');
-    }
-
     private currentGameState = -1;
     private nextGameState = 0;
     // state:
@@ -144,6 +148,9 @@ class Main extends eui.UILayer {
     //      2 -> flash
     //      3 -> rest
     //      4 -> End
+    //    100 -> connect to server (display "connecting")
+    //    101 -> wait for controller (display "Room ID and wait")
+    //    102, 103 -> wait for start
     private currentGameScene;
     private trial=1;
 
@@ -168,8 +175,9 @@ class Main extends eui.UILayer {
                 if(this.dispFPScurrentNum>this.dispFPSNum){
                     this.dispFPScurrentNum=0;
                     this.FPSlabel.text = 'FPS: ' + Math.floor(this.sumFPS/this.sumNum*100)/100 + '\n' +
-                                         'ID: ' + this.idStr + '\n' +
-                                         'Room: ' + this.roomStr;
+                                         'Connect: '+this.connect_flag.toString() + '\n' +
+                                         ''+//'ID: ' + this.idStr + '\n' +
+                                         ''//'Room: ' + this.roomStr;
                     this.sumFPS = 0;
                     this.sumNum = 0;
                 }
@@ -189,29 +197,65 @@ class Main extends eui.UILayer {
                     console.log('Start Scene');
                     this.feedbackStr = '';
                     this.trial=1;
+                    if(this.connect_flag){
+                        this.socket.disconnect();
+                    }
                     this.currentGameScene = new StartScene();
                     break;
                 }
                 case 1:{
                     console.log('Cue')
-                    this.currentGameScene = new FightScene(1,this.trial,this.feedbackStr);
+                    this.currentGameScene = new FightScene(1,this.trial,this.feedbackStr,this.connect_flag);
                     break;
                 }
                 case 2:{
                     console.log('Flash')
-                    this.currentGameScene = new FightScene(2,this.trial,this.feedbackStr);
+                    this.currentGameScene = new FightScene(2,this.trial,this.feedbackStr,this.connect_flag);
                     break;
                 }
                 case 3:{
                     console.log('Rest')
-                    this.currentGameScene = new FightScene(3,this.trial,this.feedbackStr);
+                    this.currentGameScene = new FightScene(3,this.trial,this.feedbackStr,this.connect_flag);
                     this.trial++;
                     break;
                 }
                 case 4:{
                     console.log('End')
-                    this.currentGameScene = new EndScene();
+                    this.currentGameScene = new EndScene(this.connect_flag);
                     break;
+                }
+                case 100:{
+                    if(this.connect_flag){
+                        console.log('Has been connected to server')    
+                    }else{
+                        console.log('Connect to Server')
+                        //
+                        var self = this
+                        this.socket = io.connect('http://127.0.0.1:5000/');
+                        this.socket.emit('addNewSSVEPStim','web_stimuli_12')
+                        this.socket.on('connect',function(){
+                            self.onSocketOpen()
+                        })
+                        this.socket.on('disconnect',function(){
+                            self.onSocketClose()
+                        })
+                        this.socket.on('news',function(data){
+                            self.onReceiveMessage(data)
+                        })
+                        this.socket.on('CreateNewSSVEPStim',function(data){
+                            self.CreateNewSSVEPStim(data)
+                        })
+                        this.socket.on('Error',function(data){
+                            self.onSocketError(data)
+                        })
+                        this.socket.on('ssvepResponse',function(data){
+                            self.onSocketSSVEPResponse(data)
+                        })
+                        this.socket.on('changeGameState',function(data){
+                            self.onSocketChangeGameState(data)
+                        })
+                        //
+                    }   
                 }
                 default:{
                     console.log('Error Build Game State !!');
@@ -222,9 +266,16 @@ class Main extends eui.UILayer {
             this.addChild(this.currentGameScene);
             this.addChild(this.FPSlabel)
         }else{
+            if(this.currentGameState==100 && this.connect_flag){
+                this.nextGameState = 101
+            }
             // check state
             if(this.currentGameScene.checkState()>=0){
                 this.nextGameState = this.currentGameScene.checkState();
+            }
+            // check whether needs re-connection
+            if(!this.connect_flag && this.nextGameState>100){
+                this.nextGameState = 0
             }
         }
     }

@@ -58,6 +58,8 @@ var FightScene = (function (_super) {
             _this.cue_6,
             _this.cue_9,
             _this.cue_12];
+        _this.backbutton_comp.touchEnabled = true;
+        _this.backbutton_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, _this.beginState, _this);
         // add feedback text
         if (feedback_str.length > 60) {
             feedback_str = feedback_str.slice(-60);
@@ -246,6 +248,9 @@ var FightScene = (function (_super) {
     };
     FightScene.prototype.checkState = function () {
         return this.gameState;
+    };
+    FightScene.prototype.beginState = function () {
+        this.gameState = 0;
     };
     return FightScene;
 }(eui.Component));

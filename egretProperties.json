@@ -22,7 +22,8 @@
       "name": "promise"
     },
     {
-      "name": "socket"
+      "name":"socket.io",
+      "path":"./libs/socket.io"
     }
   ],
   "eui": {

@@ -75,9 +75,6 @@ var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.currentGameState = -1;
-        _this.nextGameState = 0;
-        _this.trial = 1;
         _this.dispFPS = true;
         _this.dispFPSNum = 30;
         _this.dispFPScurrentNum = -1;
@@ -86,7 +83,33 @@ var Main = (function (_super) {
         _this.sumNum = 0;
         _this.FPSlabel = new egret.TextField();
         _this.feedbackStr = '';
+        _this.idStr = '';
         _this.roomStr = '';
+        _this.socket = io.connect('http://127.0.0.1:5000/');
+        // private socket = new egret.WebSocket();
+        // private connectFlag = false;
+        // private onSocketOpen(){
+        //     console.log('Connect OK');
+        //     this.connectFlag=true;
+        //     // const cmd = '{"name":"SSVEP_stim"}';
+        //     // this.socket.writeUTF(cmd);
+        // }
+        // private onReceiveMessage(e:egret.Event){
+        //     const msg = this.socket.readUTF();
+        //     console.log('Receive '+msg);
+        // }
+        // private onSocketClose(){
+        //     this.roomStr = 'None';
+        //     this.idStr = 'None';
+        //     this.connectFlag=false;
+        //     console.log('Close');
+        // }
+        // private onSocketError(){
+        //     console.log('Error');
+        // }
+        _this.currentGameState = -1;
+        _this.nextGameState = 0;
+        _this.trial = 1;
         return _this;
         //protected createGameScene(): void {
         //    let gameScene = new FightScene();
@@ -250,6 +273,13 @@ var Main = (function (_super) {
                         return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
                     case 3:
                         _a.sent();
+                        //
+                        // this.socket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+                        // this.socket.addEventListener(egret.Event.CONNECT, this.onSocketOpen, this);
+                        // this.socket.addEventListener(egret.Event.CLOSE, this.onSocketClose, this);
+                        // this.socket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onSocketError, this);
+                        //this.socket.connect('127.0.0.1',5000)
+                        //
                         this.stage.removeChild(loadingView);
                         return [3 /*break*/, 5];
                     case 4:
@@ -275,10 +305,11 @@ var Main = (function (_super) {
     Main.prototype.Game = function () {
         if (this.dispFPS) {
             if (this.dispFPScurrentNum < 0) {
-                //Init
+                //Init dsp display
                 this.PreTime = egret.getTimer();
                 this.FPSlabel.text = 'None';
                 this.roomStr = 'None';
+                this.idStr = 'None';
                 this.FPSlabel.size = 20;
                 this.dispFPScurrentNum = 0;
             }
@@ -288,11 +319,12 @@ var Main = (function (_super) {
                 this.sumFPS += 1000 / (currentTime - this.PreTime);
                 this.sumNum++;
                 this.PreTime = currentTime;
-                // Update display
+                // Update fps display
                 this.dispFPScurrentNum++;
                 if (this.dispFPScurrentNum > this.dispFPSNum) {
                     this.dispFPScurrentNum = 0;
                     this.FPSlabel.text = 'FPS: ' + Math.floor(this.sumFPS / this.sumNum * 100) / 100 + '\n' +
+                        'ID: ' + this.idStr + '\n' +
                         'Room: ' + this.roomStr;
                     this.sumFPS = 0;
                     this.sumNum = 0;

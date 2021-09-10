@@ -56,13 +56,16 @@ class FightScene extends eui.Component{
 
     private triggerFrameCount;
 
+    private connect_flag;
+
     //state:
     //      1 -> cue
     //      2 -> flash
     //      3 -> rest
 
-    public constructor(state: number, trail: number, feedback_str: string){
+    public constructor(state: number, trail: number, feedback_str: string, connect_flag: boolean){
         super();
+        this.connect_flag = connect_flag;
         this.currentGameState = state;
         this.currentTrail = trail;
         this.triggerFrameCount = 0;
@@ -169,6 +172,10 @@ class FightScene extends eui.Component{
         }else{
             this.startCount();
         }
+        // start clock
+        if(!this.connect_flag){
+            this.clock.start_clock();
+        }
     }
 
     private initFlash(){
@@ -177,7 +184,9 @@ class FightScene extends eui.Component{
         for(let i=0;i<this.flashList.length;i++){
             dispActualFreq += this.flashList[i].getFreq()*1000.0/(2*Math.PI)+', '; //2*Math.PI*flashFreq/1000.0
         }
-        console.log(dispActualFreq)
+        if(this.currentGameState==2){
+            console.log(dispActualFreq)
+        }
         // add stimuli to area
         for(let i=0;i<this.flashList.length;i++){
             // add positive image
@@ -196,14 +205,11 @@ class FightScene extends eui.Component{
         this.dispTrigger = 1;
         //start flash event
         this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrame, this, false, 999);
-        //start clock
-        this.clock.start_clock();
     }
 
     private startCount(){
         this.dispTrigger = 1;
         this.addEventListener(egret.Event.ENTER_FRAME, this.onEnterFrameCount, this, false, 999);
-        this.clock.start_clock();
     }
 
     private stopFlash(){
@@ -283,7 +289,11 @@ class FightScene extends eui.Component{
     }
 
     private beginState(){
-        this.gameState = 0;
+        if(this.connect_flag){
+            this.gameState = 100;
+        }else{
+            this.gameState = 0;
+        }
     }
 
     // public constructor(){
