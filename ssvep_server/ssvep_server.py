@@ -4,6 +4,8 @@ from flask import Flask, request
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from os import urandom
 from uuid import uuid1
+import logging
+#import eventlet
 
 class client_info:
     def __init__(self,userName,userID,roomID):
@@ -66,7 +68,15 @@ class client_list:
 app = Flask(__name__)
 app.config['SECRET_KEY'] = urandom(24)
 socketio = SocketIO(app)
+#eventlet.monkey_patch()
+#socketio = SocketIO(app, async_mode='eventlet')#
+#eventlet.sleep(1)
+#global worker
+#https://stackoverflow.com/questions/44371041/python-socketio-and-flask-how-to-stop-a-loop-in-a-background-thread
 socketio.init_app(app, cors_allowed_origins="*")
+
+log = logging.getLogger('werkzeug')
+log.setLevel(logging.ERROR)
 
 clientList = client_list()
 
