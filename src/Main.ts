@@ -250,6 +250,8 @@ class Main extends eui.UILayer {
                     break;
                 }
                 case 100:{
+                    this.feedbackStr = '';
+                    this.trial=1;
                     this.currentGameScene = new ConnectingScene();
                     if(this.connect_flag){
                         console.log('Has been connected to server')    
