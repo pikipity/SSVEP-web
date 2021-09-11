@@ -158,6 +158,7 @@ def receiveSSVEPResponse(Data):
         existClient = existClient[0]
         roomID = existClient.getRoom()
         emit('ssvepResponse',Data,to=roomID)
+        print(userID+' in Room '+roomID+' ssvep response to '+Data)
         
 @socketio.on('changeGameState')
 def changeGameState(Data):
@@ -172,6 +173,22 @@ def changeGameState(Data):
         existClient = existClient[0]
         roomID = existClient.getRoom()
         emit('changeGameState',Data,to=roomID)
+        print(userID+' in Room '+roomID+' change state to '+Data)
+        
+@socketio.on('changeGameStateRes')
+def changeGameState(Data):
+    # Data format: gamestate
+    userID = ''+request.sid
+    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+    if not existClientFlag:
+        emit('Error','Error: Client doest not exist')
+    elif len(existClient)>1:
+        emit('Error','Error: Too many same client')
+    else:
+        existClient = existClient[0]
+        roomID = existClient.getRoom()
+        emit('changeGameStateRes',Data,to=roomID)
+        print(userID+' in Room '+roomID+' change state to '+Data+' OK!!')
     
 
 if __name__ == '__main__':

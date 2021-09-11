@@ -127,11 +127,20 @@ class Main extends eui.UILayer {
 
     private onSocketSSVEPResponse(data){
         console.log('Response: '+data)
+        this.feedbackStr=this.feedbackStr+data
     }
 
     private onSocketChangeGameState(data){
         console.log('Change state to '+data)
         this.nextGameState = parseInt(data)
+        if(this.currentGameState==this.nextGameState){
+            console.log('Do not need change')
+            this.socket.emit('changeGameStateRes',this.currentGameState.toString())
+        }
+    }
+
+    private onSocketChangeGameStateRes(data){
+        console.log('Change state to '+data+' OK!!')
     }
 
     // private onScoketReconnectionFail(){
@@ -211,9 +220,6 @@ class Main extends eui.UILayer {
             }
             // build new scene
             this.currentGameState = this.nextGameState;
-            if(this.connect_flag){
-                this.socket.emit('changeGameState',this.currentGameState.toString())
-            }
             switch(this.currentGameState){
                 case 0:{
                     console.log('Start Scene');
@@ -275,6 +281,9 @@ class Main extends eui.UILayer {
                         this.socket.on('Error',function(data){
                             self.onSocketError(data)
                         })
+                        this.socket.on('changeGameStateRes',function(data){
+                            self.onSocketChangeGameStateRes(data)
+                        })
                         // this.socket.on('error',function(){
                         //     self.onSocketConnectError()
                         // })
@@ -326,6 +335,9 @@ class Main extends eui.UILayer {
             }
             this.addChild(this.currentGameScene);
             this.addChild(this.FPSlabel)
+            if(this.connect_flag){
+                this.socket.emit('changeGameStateRes',this.currentGameState.toString())
+            }
         }else{
             if(this.currentGameState==100 && this.connect_flag){
                 this.nextGameState = 101
