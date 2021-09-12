@@ -3,7 +3,7 @@
 from flask import Flask, request
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 from os import urandom
-from uuid import uuid1
+#from uuid import uuid1
 import logging
 #import eventlet
 
@@ -64,6 +64,8 @@ class client_list:
     def deletRoom(self,roomNum):
         roomNum=int(roomNum)
         self.RoomNumList = list(filter(lambda x: x!=roomNum,self.RoomNumList))
+    def getList(self):
+        return self.list
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = urandom(24)
@@ -76,7 +78,7 @@ socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
 
 log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR)
+log.setLevel(logging.DEBUG)
 
 clientList = client_list()
 
@@ -176,7 +178,7 @@ def changeGameState(Data):
         print(userID+' in Room '+roomID+' change state to '+Data)
         
 @socketio.on('changeGameStateRes')
-def changeGameState(Data):
+def changeGameStateRes(Data):
     # Data format: gamestate
     userID = ''+request.sid
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
@@ -189,7 +191,14 @@ def changeGameState(Data):
         roomID = existClient.getRoom()
         emit('changeGameStateRes',Data,to=roomID)
         print(userID+' in Room '+roomID+' change state to '+Data+' OK!!')
+        
+@socketio.on('listallclient')
+def listAllClient(Data):
+    FullList = clientList.getList()
+    for i in range(len(FullList)):
+        emit('message',str(i)+': '+FullList[i].getName()+', '+FullList[i].getID()+', '+FullList[i].getRoom())
+    
     
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app,host='127.0.0.1',port=5001)
