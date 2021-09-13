@@ -85,6 +85,21 @@ clientList = client_list()
 analysis_name='ssvepanalysis'
 stim_name='ssvepstim'
 
+# event for all:
+#   Error
+#   changeGameState
+#   getroommate_res
+#   message (list all client)
+#   changeGameStateRes (mainly for ssvep analysis, send by ssvep stim)
+#   message (disconnection notation, mainly for ssvep analysis)
+
+
+# event for ssvep analysis:
+#   CreateNewSSVEPAnalysis
+
+# event for ssvep stim:
+#   ssvepResponse
+
 @app.route('/')
 def index():
     return 'Test'
