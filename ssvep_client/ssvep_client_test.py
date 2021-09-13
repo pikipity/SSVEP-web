@@ -113,7 +113,7 @@ def main_task():
     sio.sleep(1)
     sio.emit('getroommate','')
     sio.sleep(1)
-    sio.emit('changeGameState','101')
+    sio.emit('changeGameState','101') # synchronize?
     while 1:
         if nextGameState!=currentGameState:
             currentGameState=nextGameState
@@ -139,7 +139,7 @@ def main_task():
             elif currentGameState==5:
                 print('Wait for stim enter room')
             elif currentGameState==100:
-                pass
+                pass 
             elif currentGameState==101:
                 state_clock.startClock(1, 102)
                 #sio.emit('changeGameState','102')
