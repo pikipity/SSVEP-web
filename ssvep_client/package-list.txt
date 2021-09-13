@@ -1,6 +1,8 @@
 # This file may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 # $ pip install pylsl
+# $ pip install "python-socketio[client]"
+# $ pip install "python-socketio[asyncio_client]"
 # platform: win-64
 alabaster=0.7.12=pyhd3eb1b0_0
 appdirs=1.4.4=pyhd3eb1b0_0

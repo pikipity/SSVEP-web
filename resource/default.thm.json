@@ -11,6 +11,7 @@
 	},
 	"autoGenerateExmlsList": true,
 	"exmls": [
+		"resource/eui_skins/AutoCreateRoomButton.exml",
 		"resource/eui_skins/backButton.exml",
 		"resource/eui_skins/ConnectBreak.exml",
 		"resource/eui_skins/Connecting.exml",
@@ -18,6 +19,8 @@
 		"resource/eui_skins/downClock.exml",
 		"resource/eui_skins/returnButton.exml",
 		"resource/eui_skins/EndScene.exml",
+		"resource/eui_skins/UseEnterRoomNumButton.exml",
+		"resource/eui_skins/enterRoomNumber.exml",
 		"resource/eui_skins/errorScene.exml",
 		"resource/eui_skins/fightScene.exml",
 		"resource/eui_skins/startButton.exml",

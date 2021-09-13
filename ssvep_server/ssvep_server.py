@@ -98,6 +98,7 @@ stim_name='ssvepstim'
 #   CreateNewSSVEPAnalysis
 
 # event for ssvep stim:
+#   CreateNewSSVEPStim
 #   ssvepResponse
 
 @app.route('/')
@@ -126,47 +127,93 @@ def handle_message(data):
     
 @socketio.on('addNewSSVEPStim')
 def addNewSSVEPStim(Data):
-    # Data format: userName
-    userID = ''+request.sid
-    userName = stim_name#Data
-    # check whether this is a new client
-    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
-    if not existClientFlag:
-        # Create new client
-        roomID=str(clientList.createNewRoom())
-        clientList.addNewClient(userName,userID,roomID)
-        join_room(roomID)
-        emit('CreateNewSSVEPStim',userID+','+roomID)
-        print('CreateNewSSVEPStim: '+userID+', room '+roomID)
+    # Data format: userName or userName,roomID
+    Data = Data.split(',')
+    if len(Data)==1:
+        Data=Data[0]
+        userID = ''+request.sid
+        userName = stim_name#Data
+        # check whether this is a new client
+        existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+        if not existClientFlag:
+            # Create new client
+            roomID=str(clientList.createNewRoom())
+            clientList.addNewClient(userName,userID,roomID)
+            join_room(roomID)
+            emit('CreateNewSSVEPStim',userID+','+roomID)
+            emit('stim_joinroom',userID,to=roomID)
+            print('CreateNewSSVEPStim: '+userID+', room '+roomID)
+        else:
+            # ignore
+            emit('Error', 'Error: Client exist')
+            print('Error: Client exist')
+    elif len(Data)==2:
+        userID = ''+request.sid
+        userName = stim_name
+        roomID = Data[1]
+        existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+        existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
+        if not existRoom:
+            emit('Error','Error: Room does not exist')
+            print('Error: Room does not exist')
+        else:
+            if existClientFlag:
+                emit('Error','Error: Client exist')
+                print('Error: Client exist')
+            else:
+                clientList.addNewClient(userName,userID,roomID)
+                join_room(roomID)
+                emit('CreateNewSSVEPStim',userID+','+roomID)
+                emit('stim_joinroom',userID,to=roomID)
+                print('CreateNewSSVEPStim: '+userID+', room '+roomID)
     else:
-        # ignore
-        emit('Error', 'Error: Client exist')
-        print('Error: Client exist')
+        emit('Error', 'Error: Too much inputs')
+        print('Error: Too much inputs')
         
 
 @socketio.on('addNewSSVEPAnalysis')
 def addNewSSVEPAnalysis(Data):
-    # Data format: userName,roomID
-    userID = ''+request.sid
+    # Data format: userName or userName,roomID
     Data = Data.split(',')
-    userName = analysis_name#Data[0]
-    roomID = Data[1]
-    # check whether this is a new client
-    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
-    # check whether room exists
-    existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
-    if not existRoom:
-        emit('Error','Error: Room does not exist')
-        print('Error: Room does not exist')
-    else:
-        if existClientFlag:
-            emit('Error','Error: Client exist')
-            print('Error: Client exist')
-        else:
+    if len(Data)==1:
+        Data=Data[0]
+        userID = ''+request.sid
+        userName = analysis_name#Data
+        existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+        if not existClientFlag:
+            roomID=str(clientList.createNewRoom())
             clientList.addNewClient(userName,userID,roomID)
             join_room(roomID)
-            emit('CreateNewSSVEPAnalysis',userID+', room '+roomID)
+            emit('CreateNewSSVEPAnalysis',userID+','+roomID)
+            emit('analysis_joinroom',userID,to=roomID)
             print('CreateNewSSVEPAnalysis: '+userID+', room '+roomID)
+        else:
+            emit('Error', 'Error: Client exist')
+            print('Error: Client exist')
+    elif len(Data)==2:
+        userID = ''+request.sid
+        userName = analysis_name#Data[0]
+        roomID = Data[1]
+        # check whether this is a new client
+        existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+        # check whether room exists
+        existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
+        if not existRoom:
+            emit('Error','Error: Room does not exist')
+            print('Error: Room does not exist')
+        else:
+            if existClientFlag:
+                emit('Error','Error: Client exist')
+                print('Error: Client exist')
+            else:
+                clientList.addNewClient(userName,userID,roomID)
+                join_room(roomID)
+                emit('CreateNewSSVEPAnalysis',userID+','+roomID)
+                emit('analysis_joinroom',userID,to=roomID)
+                print('CreateNewSSVEPAnalysis: '+userID+', room '+roomID)
+    else:
+        emit('Error', 'Error: Too much inputs')
+        print('Error: Too much inputs')
             
 @socketio.on('SSVEPResponse')
 def receiveSSVEPResponse(Data):
@@ -251,13 +298,13 @@ def getRoomMate(Data):
                 for i in range(len(existRoomClient)):
                     if existRoomClient[i].getName()==stim_name:
                         roommateList.append(existRoomClient[i].getID())
-                emit('getroommate_res',','.join(roommateList))
+                emit('getroommate_res','roommate: '+','.join(roommateList))
                 print(userID+' '+analysis_name+' roommate: '+','.join(roommateList))
             elif username==stim_name:
                 for i in range(len(existRoomClient)):
                     if existRoomClient[i].getName()==analysis_name:
                         roommateList.append(existRoomClient[i].getID())
-                emit('getroommate_res',','.join(roommateList))
+                emit('getroommate_res','roommate: '+','.join(roommateList))
                 print(userID+' '+stim_name+' roommate: '+','.join(roommateList))
 
     

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.enterRoomNumber"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Label text="Enter Room Number" y="261.099" size="60" horizontalCenter="0" textAlign="center"/>
+	<e:Rect width="811" height="83" y="391.956" fillColor="0xFFFFFF" horizontalCenter="0"/>
+	<e:EditableText id="roomNum_entry" width="811" height="83" y="391.956" size="60" verticalAlign="middle" textAlign="left" horizontalCenter="0" textColor="0x000000"/>
+	<e:Button id="autoCreateButton" label="Button" x="671.238" y="565" skinName="skins.AutoCreateRoomButton"/>
+	<e:Button id="useEnterButton" label="Button" x="1017.302" y="565" skinName="skins.UseEnterRoomNumButton"/>
+	<e:Button id="returnbutton_comp" label="Button" skinName="skins.backButton" right="1" top="1"/>
+</e:Skin>

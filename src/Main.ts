@@ -38,11 +38,11 @@ class Main extends eui.UILayer {
         })
 
         egret.lifecycle.onPause = () => {
-            egret.ticker.pause();
+            //egret.ticker.pause();
         }
 
         egret.lifecycle.onResume = () => {
-            egret.ticker.resume();
+            //egret.ticker.resume();
         }
 
         //inject the custom material parser
@@ -104,7 +104,7 @@ class Main extends eui.UILayer {
         this.roomStr = 'None';
         this.idStr = 'None';
         console.log('Disconnect')
-        if(this.currentGameState>0){
+        if(this.currentGameState>0 && this.currentGameState<999){
             this.nextGameState = 104
         }
     }
@@ -115,6 +115,8 @@ class Main extends eui.UILayer {
 
     private onSocketError(data){
         console.log(data)
+        this.errorStr = data
+        this.nextGameState = 999
     }
 
     private CreateNewSSVEPStim(data){
@@ -166,6 +168,9 @@ class Main extends eui.UILayer {
     private feedbackStr = '';
     private idStr = '';
     private roomStr = '';
+    private errorStr = '';
+
+    private enterRoomFlag = false;
 
     private currentGameState = -1;
     private nextGameState = 0;
@@ -175,10 +180,12 @@ class Main extends eui.UILayer {
     //      2 -> flash
     //      3 -> rest
     //      4 -> End
+    //      5 -> enter room number
     //    100 -> connect to server (display "connecting")
     //    101 -> wait for controller (display "Room ID and wait")
     //    102, 103 -> wait for start
     //    104 -> connect break
+    //    999 -> Error
     private currentGameScene;
     private trial=1;
 
@@ -220,10 +227,14 @@ class Main extends eui.UILayer {
             }
             // build new scene
             this.currentGameState = this.nextGameState;
+            if(this.connect_flag){
+                this.socket.emit('changeGameStateRes',this.currentGameState.toString())
+            }
             switch(this.currentGameState){
                 case 0:{
                     console.log('Start Scene');
                     this.feedbackStr = '';
+                    this.errorStr = '';
                     this.trial=1;
                     try{
                         this.socket.disconnect();
@@ -254,6 +265,11 @@ class Main extends eui.UILayer {
                     console.log('End')
                     this.currentGameScene = new EndScene(this.connect_flag);
                     break;
+                }
+                case 5:{
+                    console.log('Enter room number')
+                    this.currentGameScene = new enterRoomNumberScene();
+                    break
                 }
                 case 100:{
                     this.feedbackStr = '';
@@ -296,7 +312,11 @@ class Main extends eui.UILayer {
                         this.socket.on('changeGameState',function(data){
                             self.onSocketChangeGameState(data)
                         })
-                        this.socket.emit('addNewSSVEPStim','web_stimuli_12')
+                        if( this.enterRoomFlag){
+                            this.socket.emit('addNewSSVEPStim','web_stimuli_12,'+this.roomStr)
+                        }else{
+                            this.socket.emit('addNewSSVEPStim','web_stimuli_12')
+                        }
                         //
                     }   
                     break;
@@ -327,17 +347,27 @@ class Main extends eui.UILayer {
                         break;
                     }
                 }
+                case 999:{
+                    try{
+                        this.socket.disconnect();
+                    }catch(error){
+                        console.log(error)
+                    }finally{
+                        console.log(this.errorStr)
+                        this.currentGameScene = new ErrorScene(this.errorStr);
+                        break;
+                    }
+                }
                 default:{
-                    console.log('Error Build Game State !!');
-                    this.currentGameScene = new ErrorScene();
+                    this.errorStr = 'Error Build Game State !!'
+                    this.nextGameState = 999
+                    //console.log('Error Build Game State !!');
+                    //this.currentGameScene = new ErrorScene();
                     break;
                 }
             }
             this.addChild(this.currentGameScene);
             this.addChild(this.FPSlabel)
-            if(this.connect_flag){
-                this.socket.emit('changeGameStateRes',this.currentGameState.toString())
-            }
         }else{
             if(this.currentGameState==100 && this.connect_flag){
                 this.nextGameState = 101
@@ -345,6 +375,13 @@ class Main extends eui.UILayer {
             // check state
             if(this.currentGameScene.checkState()>=0){
                 this.nextGameState = this.currentGameScene.checkState();
+                if(this.currentGameState==5){
+                    this.enterRoomFlag=this.currentGameScene.getRoomFlag();
+                    this.roomStr=this.currentGameScene.getRoom();
+                }
+                if(this.currentGameState==101 && this.nextGameState==100){
+                    this.nextGameState=101
+                }
             }
             // check whether needs re-connection
             // if(!this.connect_flag && this.nextGameState>100){

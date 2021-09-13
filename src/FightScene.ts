@@ -289,11 +289,12 @@ class FightScene extends eui.Component{
     }
 
     private beginState(){
-        if(this.connect_flag){
-            this.gameState = 100;
-        }else{
-            this.gameState = 0;
-        }
+        this.gameState = 0;
+        // if(this.connect_flag){
+        //     this.gameState = 100;
+        // }else{
+        //     this.gameState = 0;
+        // }
     }
 
     // public constructor(){

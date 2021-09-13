@@ -25,6 +25,6 @@ class StartScene extends eui.Component{
     }
 
     private connectServerFun(){
-        this.gameState = 100;
+        this.gameState = 5;//100;
     }
 }

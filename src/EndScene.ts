@@ -20,6 +20,7 @@ class EndScene extends eui.Component{
     }
 
     private beginState(){
+        //this.gameState = 0;
         if(this.connect_flag){
             this.gameState = 100;
         }else{
