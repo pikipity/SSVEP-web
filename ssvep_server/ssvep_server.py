@@ -82,21 +82,28 @@ log.setLevel(logging.DEBUG)
 
 clientList = client_list()
 
+analysis_name='ssvepanalysis'
+stim_name='ssvepstim'
+
 @app.route('/')
 def index():
     return 'Test'
 
 @socketio.on('connect')
 def connect_fun():
-    print(request.sid+' Connect')
+    print(request.sid+' connect')
     
 @socketio.on('disconnect')
 def disconnect_fun():
     userID = ''+request.sid
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
     if existClientFlag:
+        for i in range(len(existClient)):
+            emit('message',request.sid+' disconnected',to=existClient[i].getRoom())
+            print(request.sid+' in room '+existClient[i].getRoom()+' disconnected')
         clientList.removeClient_by_ID(userID)
-    print(request.sid+'disconnected')
+    else:
+        print(request.sid+' disconnected')
     
 @socketio.on('message')
 def handle_message(data):
@@ -106,7 +113,7 @@ def handle_message(data):
 def addNewSSVEPStim(Data):
     # Data format: userName
     userID = ''+request.sid
-    userName = Data
+    userName = stim_name#Data
     # check whether this is a new client
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
     if not existClientFlag:
@@ -115,7 +122,7 @@ def addNewSSVEPStim(Data):
         clientList.addNewClient(userName,userID,roomID)
         join_room(roomID)
         emit('CreateNewSSVEPStim',userID+','+roomID)
-        print('CreateNewSSVEPStim: '+userID+','+roomID)
+        print('CreateNewSSVEPStim: '+userID+', room '+roomID)
     else:
         # ignore
         emit('Error', 'Error: Client exist')
@@ -127,7 +134,7 @@ def addNewSSVEPAnalysis(Data):
     # Data format: userName,roomID
     userID = ''+request.sid
     Data = Data.split(',')
-    userName = Data[0]
+    userName = analysis_name#Data[0]
     roomID = Data[1]
     # check whether this is a new client
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
@@ -143,8 +150,8 @@ def addNewSSVEPAnalysis(Data):
         else:
             clientList.addNewClient(userName,userID,roomID)
             join_room(roomID)
-            emit('CreateNewSSVEPAnalysis',userID+','+roomID)
-            print('CreateNewSSVEPAnalysis: '+userID+','+roomID)
+            emit('CreateNewSSVEPAnalysis',userID+', room '+roomID)
+            print('CreateNewSSVEPAnalysis: '+userID+', room '+roomID)
             
 @socketio.on('SSVEPResponse')
 def receiveSSVEPResponse(Data):
@@ -154,8 +161,10 @@ def receiveSSVEPResponse(Data):
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
     if not existClientFlag:
         emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
     elif len(existClient)>1:
         emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
     else:
         existClient = existClient[0]
         roomID = existClient.getRoom()
@@ -169,8 +178,10 @@ def changeGameState(Data):
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
     if not existClientFlag:
         emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
     elif len(existClient)>1:
         emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
     else:
         existClient = existClient[0]
         roomID = existClient.getRoom()
@@ -184,8 +195,10 @@ def changeGameStateRes(Data):
     existClientFlag, existClient = clientList.checkClient_by_ID(userID)
     if not existClientFlag:
         emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
     elif len(existClient)>1:
         emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
     else:
         existClient = existClient[0]
         roomID = existClient.getRoom()
@@ -196,8 +209,42 @@ def changeGameStateRes(Data):
 def listAllClient(Data):
     FullList = clientList.getList()
     for i in range(len(FullList)):
-        emit('message',str(i)+': '+FullList[i].getName()+', '+FullList[i].getID()+', '+FullList[i].getRoom())
-    
+        emit('message',str(i)+': '+FullList[i].getName()+', '+FullList[i].getID()+', room '+FullList[i].getRoom())
+        print(str(i)+': '+FullList[i].getName()+', '+FullList[i].getID()+', room '+FullList[i].getRoom())
+        
+@socketio.on('getroommate')
+def getRoomMate(Data):
+    roommateList=[]
+    userID = ''+request.sid
+    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+    if not existClientFlag:
+        emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
+    elif len(existClient)>1:
+        emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
+    else:
+        existClient = existClient[0]
+        username=existClient.getName()
+        roomID = existClient.getRoom()
+        existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
+        if not existRoom:
+            emit('Error','Error: Room does not exist')
+            print('Error: Room does not exist')
+        else:
+            if username==analysis_name:
+                for i in range(len(existRoomClient)):
+                    if existRoomClient[i].getName()==stim_name:
+                        roommateList.append(existRoomClient[i].getID())
+                emit('getroommate_res',','.join(roommateList))
+                print(userID+' '+analysis_name+' roommate: '+','.join(roommateList))
+            elif username==stim_name:
+                for i in range(len(existRoomClient)):
+                    if existRoomClient[i].getName()==analysis_name:
+                        roommateList.append(existRoomClient[i].getID())
+                emit('getroommate_res',','.join(roommateList))
+                print(userID+' '+stim_name+' roommate: '+','.join(roommateList))
+
     
 
 if __name__ == '__main__':
