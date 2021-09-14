@@ -145,6 +145,11 @@ class Main extends eui.UILayer {
         console.log('Change state to '+data+' OK!!')
     }
 
+    private onSocketChangeTrial(data){
+        console.log('Change trial to '+data)
+        this.trial=parseInt(data)
+    }
+
     // private onScoketReconnectionFail(){
     //     try{
     //         this.socket.disconnect();
@@ -299,6 +304,9 @@ class Main extends eui.UILayer {
                         })
                         this.socket.on('changeGameStateRes',function(data){
                             self.onSocketChangeGameStateRes(data)
+                        })
+                        this.socket.on('changeTrial',function(data){
+                            self.onSocketChangeTrial(data)
                         })
                         // this.socket.on('error',function(){
                         //     self.onSocketConnectError()

@@ -12,12 +12,17 @@ class client_info:
         self.userName=userName
         self.userID=userID
         self.roomID=roomID
+        self.state=-1
     def getName(self):
         return self.userName
     def getID(self):
         return self.userID
     def getRoom(self):
         return self.roomID
+    def getState(self):
+        return self.state
+    def setState(self,inputState):
+        self.state=inputState
     
 class client_list:
     def __init__(self):
@@ -264,6 +269,10 @@ def changeGameStateRes(Data):
     else:
         existClient = existClient[0]
         roomID = existClient.getRoom()
+        for i in range(len(clientList.list)):
+            if clientList.list[i].getID()==userID:
+                clientList.list[i].setState(int(Data))
+                break
         emit('changeGameStateRes',Data,to=roomID)
         print(userID+' in Room '+roomID+' change state to '+Data+' OK!!')
         
@@ -306,7 +315,49 @@ def getRoomMate(Data):
                         roommateList.append(existRoomClient[i].getID())
                 emit('getroommate_res','roommate: '+','.join(roommateList))
                 print(userID+' '+stim_name+' roommate: '+','.join(roommateList))
-
+                
+@socketio.on('AskSynchronization')
+def askSynchronization(Data):
+    userID = ''+request.sid
+    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+    if not existClientFlag:
+        emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
+    elif len(existClient)>1:
+        emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
+    else:
+        existClient = existClient[0]
+        username=existClient.getName()
+        roomID = existClient.getRoom()
+        existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
+        if not existRoom:
+            emit('Error','Error: Room does not exist')
+            print('Error: Room does not exist')
+        else:
+            for i in range(len(existRoomClient)):
+                if not existRoomClient[i].getID()==userID:        
+                    existRoomClient=existRoomClient[i]
+                    roommate_state=existRoomClient.getState()
+                    emit('synchronizationRes',str(roommate_state))
+                    print(userID+' roommate state: '+str(roommate_state))
+                    break
+                
+@socketio.on('changeTrial')
+def changeTrial(Data):
+    userID = ''+request.sid
+    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+    if not existClientFlag:
+        emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
+    elif len(existClient)>1:
+        emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
+    else:
+        existClient = existClient[0]
+        roomID = existClient.getRoom()
+        emit('changeTrial',Data,to=roomID)
+        print(userID+' in Room '+roomID+' change trial to '+Data)
     
 
 if __name__ == '__main__':

@@ -139,7 +139,7 @@ def main_task():
             elif currentGameState==5:
                 print('Wait for stim enter room')
             elif currentGameState==100:
-                pass 
+                pass #ask to 100?
             elif currentGameState==101:
                 state_clock.startClock(1, 102)
                 #sio.emit('changeGameState','102')
