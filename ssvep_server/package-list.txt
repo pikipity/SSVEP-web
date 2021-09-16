@@ -1,5 +1,5 @@
 # This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
+# $ conda create --name ssvep_server --file package-list.txt python=3.6
 # platform: win-64
 alabaster=0.7.12=pyhd3eb1b0_0
 appdirs=1.4.4=pyhd3eb1b0_0

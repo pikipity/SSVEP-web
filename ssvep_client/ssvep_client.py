@@ -3,39 +3,14 @@ import socketio
 import time
 
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QFileDialog
 from PyQt5.QtCore import pyqtSignal
-import sys
+import sys, os
 
-class clockClass:
-    def __init__(self):
-        self.switch = False
-        self.startTime = -1
-        self.currentTime = 0
-        self.endTime = 0
-        self.targetState = -1
-    def startClock(self,endTime,targetState):
-        self.switch = True
-        self.startTime = time.time()
-        self.currentTime = self.startTime
-        self.endTime = endTime
-        self.targetState = targetState
-    def runClock(self):
-        targetState = -1
-        diff_time = self.currentTime-self.startTime
-        if self.switch:
-            self.currentTime = time.time()
-            diff_time = self.currentTime-self.startTime
-            if diff_time>=self.endTime:
-                targetState = self.targetState
-                self.stopClock()
-        return targetState, diff_time
-    def stopClock(self):
-        self.switch = False
-        self.startTime = -1
-        self.currentTime = 0
-        self.endTime = 0
-        self.targetState = -1
+import pickle
+
+from clockClass import clockClass
+from editTask import editTaskWindow
         
 class Ui(QtWidgets.QMainWindow):
     connect_signal = pyqtSignal()
@@ -59,6 +34,13 @@ class Ui(QtWidgets.QMainWindow):
     synchronizationRes_signal = pyqtSignal(str)
     def _handle_synchronizationRes_fun(self,data):
         self.synchronizationRes_signal.emit(data)
+    changeTrial_signal = pyqtSignal(str)
+    def _handle_changeTrial_fun(self,data):
+        self.changeTrial_signal.emit(data)
+    leaveRoom_signal = pyqtSignal(str)
+    def _handle_leaveRoom_fun(self,data):
+        self.leaveRoom_signal.emit(data)
+        
     consoleDisplay_signal = pyqtSignal(str)
     
     def __init__(self):
@@ -80,48 +62,64 @@ class Ui(QtWidgets.QMainWindow):
         self.message_signal.connect(self.message_fun)
         self.sio.on('synchronizationRes',self._handle_synchronizationRes_fun)
         self.synchronizationRes_signal.connect(self.synchronizationRes_fun)
+        self.sio.on('changeTrial',self._handle_changeTrial_fun)
+        self.changeTrial_signal.connect(self.changeTrial_fun)
+        self.sio.on('leaveRoom',self._handle_leaveRoom_fun)
+        self.leaveRoom_signal.connect(self.leaveRoom_fun)
         #
+        self.currentTask = None
+        self.taskValue={'Cue':1,'Flash':2,'Break':3}
         self.state_clock=clockClass()
         self.connect_flag=False
+        self.taskContinue_flag=False
         self.server_path=''
         self.roomStr=''
         self.idStr=''
         self.consoleOutputText=''
-        self.currentGameState = -1
+        self.currentGameState = 0
         self.nextGameState = -1
+        self.forceChangeState=False
         #
         self.idDisplay = self.findChild(QtWidgets.QLineEdit, 'idStr')
         self.roomDisplay = self.findChild(QtWidgets.QLineEdit, 'roomStr')
         self.connectFlagDisplay = self.findChild(QtWidgets.QLineEdit, 'connectFlag')
         self.consoleOutput = self.findChild(QtWidgets.QPlainTextEdit,'consoleOutput')
         self.consoleDisplay_signal.connect(self.updateConsoleOutput)
+        #
+        self.connectServerFlag = self.findChild(QtWidgets.QLineEdit, 'connectServerFlag')
+        self.connectServerFlag.setText('Disconnected')
         self.serverPathDisplay = self.findChild(QtWidgets.QLineEdit, 'serverPathStr')
         self.connectButton = self.findChild(QtWidgets.QPushButton, 'connectButton')
         self.connectButton.clicked.connect(self.connectButtonFun)
         self.disconnectButton = self.findChild(QtWidgets.QPushButton, 'disconnectButton')
         self.disconnectButton.clicked.connect(self.disconnectButtonFun)
+        #
         self.autoCreateRoom = self.findChild(QtWidgets.QPushButton, 'autoCreateRoomButton')
         self.autoCreateRoom.clicked.connect(self.autoCreateRoomFun)
         self.roomIDEntryDisplay = self.findChild(QtWidgets.QLineEdit, 'roomIDEntry')
         self.enterRoomButton = self.findChild(QtWidgets.QPushButton, 'enterRoomButton')
         self.enterRoomButton.clicked.connect(self.enterRoomButtonFun)
+        self.leaveRoomButton = self.findChild(QtWidgets.QPushButton, 'leaveRoomButton')
+        self.leaveRoomButton.clicked.connect(self.leaveRoomButtonFun)
+        #
+        self.loadTaskButon = self.findChild(QtWidgets.QPushButton, 'loadTaskButton')
+        self.loadTaskButton.clicked.connect(self.loadTaskButtonFun)
         self.startTaskButton = self.findChild(QtWidgets.QPushButton, 'startTaskButton')
         self.startTaskButton.clicked.connect(self.startTaskButtonFun)
         self.scheduleTaskButton = self.findChild(QtWidgets.QPushButton, 'scheduleTaskButton')
         self.scheduleTaskButton.clicked.connect(self.scheduleTaskButtonFun)
+        self.stopTaskButton = self.findChild(QtWidgets.QPushButton, 'stopTaskButton')
+        self.stopTaskButton.clicked.connect(self.stopTaskButtonFun)
+        self.taskDisplay = self.findChild(QtWidgets.QLineEdit, 'taskDisplay')
         #
         self.updateStateDisplay()
         self.consoleDisplay_signal.emit('')
+        #
         self.show()
         
     def closeEvent(self, event):
-        try:
-            self.sio.emit('changeGameState',str(0))
-        except:
-            pass
-        finally:
-            self.sio.disconnect()
-            event.accept()
+        self.sio.disconnect()
+        event.accept()
 #         reply = QMessageBox.question(self, 'Window Close', 'Are you sure you want to close the window?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 # 		if reply == QMessageBox.Yes:
 #             try:
@@ -136,6 +134,10 @@ class Ui(QtWidgets.QMainWindow):
         self.idDisplay.setText(self.idStr)
         self.roomDisplay.setText(self.roomStr)
         self.connectFlagDisplay.setText(str(self.connect_flag))
+        if self.currentTask is not None:
+            self.taskDisplay.setText(self.currentTask.name)
+        else:
+            self.taskDisplay.setText('')
         
     def updateConsoleOutput(self,newIn=''):
         if not len(newIn)==0:
@@ -154,17 +156,36 @@ class Ui(QtWidgets.QMainWindow):
         
     def connect_fun(self):
         localtime = time.asctime( time.localtime(time.time()) )
+        self.connectServerFlag.setText('Connected')
         self.consoleDisplay_signal.emit('Connect\n---- Start AT '+localtime+' ----\n')
         
     def disconnect_fun(self):
         self.connect_flag=False
         self.roomStr=''
         self.idStr=''
+        self.connectServerFlag.setText('Disconnected')
         localtime = time.asctime( time.localtime(time.time()) )
         self.consoleDisplay_signal.emit('\n---- End AT '+localtime+' ----\nDisconnect')
         self.updateStateDisplay()
-        if self.currentGameState>0 and self.currentGameState<999:
-            self.nextGameState=104
+        # if self.currentGameState>0 and self.currentGameState<999:
+        #     try:
+        #         self.sio.emit('changeGameState',str(104))
+        #     except:
+        #         pass     
+            # self.nextGameState=104
+            
+    def leaveRoom_fun(self,data):
+        self.connect_flag=False
+        self.roomStr=''
+        self.idStr=''
+        self.consoleDisplay_signal.emit(data)
+        self.updateStateDisplay()
+        # if self.currentGameState>0 and self.currentGameState<999:
+        #     try:
+        #         self.sio.emit('changeGameState',str(104))
+        #     except:
+        #         pass     
+            # self.nextGameState=104
             
     def message_fun(self,data):
         self.consoleDisplay_signal.emit('Message: '+data)
@@ -175,7 +196,11 @@ class Ui(QtWidgets.QMainWindow):
         
     def changeGameStateRes_fun(self,data):
         self.nextGameState=int(data)
+        self.forceChangeState=True
         self.consoleDisplay_signal.emit('change state to '+data)
+        
+    def changeTrial_fun(self,data):
+        self.consoleDisplay_signal.emit('change trial to '+data)
         
     def CreateNewSSVEPAnalysis_fun(self,data):
         datasplit=data.split(',')
@@ -204,35 +229,73 @@ class Ui(QtWidgets.QMainWindow):
                 self.sio.emit('addNewSSVEPAnalysis','ssvepanalysis,'+roomID)
             except:
                 self.consoleDisplay_signal.emit('Please connect to server first')
+                
+    def leaveRoomButtonFun(self):
+        try:
+            self.sio.emit('leaveRoom','')
+        except:
+            self.consoleDisplay_signal.emit('Please connect to server first')
             
     def startTaskButtonFun(self):
-        if self.connect_flag:
-            self.consoleDisplay_signal.emit('Start Task')
-            self.sio.start_background_task(self.main_task)
+        if self.currentTask is None:
+            self.consoleDisplay_signal.emit('Please schedule a task')
         else:
-            self.consoleDisplay_signal.emit('Please connect to stimulus first')
+            if self.connect_flag:
+                self.consoleDisplay_signal.emit('Start Task')
+                self.taskContinue_flag=True
+                self.sio.start_background_task(self.main_task)
+            else:
+                self.consoleDisplay_signal.emit('Please connect to stimulus first')
+            
+    def stopTaskButtonFun(self):
+        self.taskContinue_flag=False
+        
             
     def main_task(self):
         self.sio.emit('AskSynchronization','')
-        while 1:
-            if self.nextGameState!=self.currentGameState:
+        self.currentGameState = 0
+        self.nextGameState = -100
+        task_step=-1
+        task_list=self.currentTask.taskList
+        currentTask=None
+        nextTask=None
+        while self.taskContinue_flag:
+            if self.nextGameState!=self.currentGameState or self.forceChangeState:
+                if self.currentGameState==-100 and (not self.nextGameState==101) and (not self.nextGameState==100):
+                    self.nextGameState=-100
+                    self.sio.emit('changeGameState',str(100))
                 self.currentGameState=self.nextGameState
+                self.forceChangeState=False
                 self.consoleDisplay_signal.emit('current state: '+str(self.currentGameState))
-                if self.currentGameState==0:
-                    self.consoleDisplay_signal.emit('Start Scene')
-                elif self.currentGameState==1:
-                    self.consoleDisplay_signal.emit('Cue')
-                    self.state_clock.startClock(1, 2)
+                if self.currentGameState==-100:
+                    self.consoleDisplay_signal.emit('wait for synchronization')
+                elif self.currentGameState==0:
+                    break
+                elif self.currentGameState==1 or self.currentGameState==2 or self.currentGameState==3:
+                    task_step=task_step+1
+                    currentTask=task_list[task_step]
+                    currentTask_time=float(currentTask.searchProperty('time'))
+                    if (task_step+1)==len(task_list):
+                        nextState=4
+                    else:
+                        nextTask=task_list[task_step+1]
+                        nextState=self.taskValue[nextTask.name]
+                        nextTask_target=nextTask.searchProperty('target')
+                        if nextTask_target is not None:
+                            self.sio.emit('changeTrial',nextTask_target)
+                    self.state_clock.startClock(currentTask_time, nextState)
+                    # self.consoleDisplay_signal.emit('Cue')
+                    # self.state_clock.startClock(1, 2)
                     # sio.sleep(1)
                     # sio.emit('changeGameState','2')
-                elif self.currentGameState==2:
-                    self.consoleDisplay_signal.emit('Flash')
-                    self.state_clock.startClock(6, 3)
+                # elif self.currentGameState==2:
+                #     self.consoleDisplay_signal.emit('Flash')
+                #     self.state_clock.startClock(6, 3)
                     # sio.sleep(6)
                     # sio.emit('changeGameState','3')
-                elif self.currentGameState==3:
-                    self.consoleDisplay_signal.emit('Rest')
-                    self.state_clock.startClock(1, 4)
+                # elif self.currentGameState==3:
+                #     self.consoleDisplay_signal.emit('Rest')
+                #     self.state_clock.startClock(1, 4)
                     # sio.sleep(1)
                     # sio.emit('changeGameState','4')
                 elif self.currentGameState==4:
@@ -240,16 +303,32 @@ class Ui(QtWidgets.QMainWindow):
                 elif self.currentGameState==5:
                     self.consoleDisplay_signal.emit('Wait for stim enter room')
                 elif self.currentGameState==100:
-                    pass
+                    task_step=-1
+                    task_list=self.currentTask.taskList
+                    currentTask=None
+                    nextTask=None
                 elif self.currentGameState==101:
                     self.state_clock.startClock(1, 102)
                     #sio.emit('changeGameState','102')
-                elif self.currentGameState==102:
-                    self.state_clock.startClock(3, 1)
+                elif self.currentGameState==102 or self.currentGameState==103:
+                    task_step=-1
+                    task_list=self.currentTask.taskList
+                    currentTask=None
+                    nextTask=None
+                    #
+                    if (task_step+1)==len(task_list):
+                        nextState=4
+                    else:
+                        nextTask=task_list[task_step+1]
+                        nextState=self.taskValue[nextTask.name]
+                        nextTask_target=nextTask.searchProperty('target')
+                        if nextTask_target is not None:
+                            self.sio.emit('changeTrial',nextTask_target)
+                    self.state_clock.startClock(3, nextState)
                     # sio.sleep(3)
                     # sio.emit('changeGameState','1')
-                elif self.currentGameState==103:
-                    self.state_clock.startClock(3, 1)
+                # elif self.currentGameState==103:
+                    # self.state_clock.startClock(3, 1)
                     # sio.sleep(3)
                     # sio.emit('changeGameState','1')
                 elif self.currentGameState==104:
@@ -270,10 +349,52 @@ class Ui(QtWidgets.QMainWindow):
                         #self.consoleDisplay_signal.emit('Time: '+str(clock_output_time)+' s')
                         self.sio.emit('changeGameState',str(clock_ouput))
                         #nextGameState=clock_ouput
+        if self.connect_flag:
+            self.sio.emit('changeGameState',str(100))
+        self.taskContinue_flag=False
         self.consoleDisplay_signal.emit('Task Finish')
         
     def scheduleTaskButtonFun(self):
-        self.consoleDisplay_signal.emit('Schedule Task')
+        #self.consoleDisplay_signal.emit('Schedule Task')
+        if self.taskContinue_flag:
+            self.consoleDisplay_signal.emit('Please stop task first')
+        else:
+            self.editTaskWindow=editTaskWindow(self.currentTask)
+            self.editTaskWindow.send_currentTask_signal.connect(self.renewTask)
+            self.editTaskWindow.show()
+    def renewTask(self,newTask):
+        deletFlag=newTask.checkTimeInList()
+        if deletFlag:
+            self.consoleDisplay_signal.emit('Tasks with time = 0 have been deleted.')
+        if len(newTask.taskList)==0:
+            self.currentTask=None
+            self.consoleDisplay_signal.emit('New task is empty')
+        else:
+            self.currentTask=newTask
+            self.consoleDisplay_signal.emit('schedule a new task: \n'+self.currentTask.display())
+        self.updateStateDisplay()
+        self.editTaskWindow.close()
+    def loadTaskButtonFun(self):
+        if self.taskContinue_flag:
+            self.consoleDisplay_signal.emit('Please stop task first')
+        else:
+            fileName_choose, fileType = QFileDialog.getOpenFileName(self,'Select stored task file',os.getcwd(),'*.BrainTask')
+            try:
+                with open(fileName_choose,'rb') as f:
+                    storeTask=pickle.load(f)
+                newTask=storeTask
+                deletFlag=newTask.checkTimeInList()
+                if deletFlag:
+                    self.consoleDisplay_signal.emit('Tasks with time = 0 have been deleted.')
+                if len(newTask.taskList)==0:
+                    self.currentTask=None
+                    self.consoleDisplay_signal.emit('New task is empty')
+                else:
+                    self.currentTask=newTask
+                    self.consoleDisplay_signal.emit('schedule a new task: \n'+self.currentTask.display())
+                self.updateStateDisplay()
+            except:
+                pass
         
         
 # sio = socketio.Client()

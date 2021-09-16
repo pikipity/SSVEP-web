@@ -1,5 +1,5 @@
 # This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
+# $ conda create --name ssvep_client --file package-list.txt python=3.9
 # $ pip install pylsl
 # $ pip install "python-socketio[client]"
 # $ pip install "python-socketio[asyncio_client]"

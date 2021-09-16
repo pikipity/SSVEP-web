@@ -328,7 +328,6 @@ def askSynchronization(Data):
         print('Error: Too many same client')
     else:
         existClient = existClient[0]
-        username=existClient.getName()
         roomID = existClient.getRoom()
         existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
         if not existRoom:
@@ -358,7 +357,29 @@ def changeTrial(Data):
         roomID = existClient.getRoom()
         emit('changeTrial',Data,to=roomID)
         print(userID+' in Room '+roomID+' change trial to '+Data)
-    
+        
+@socketio.on('leaveRoom')
+def leaveRoom(Data):
+    userID = ''+request.sid
+    existClientFlag, existClient = clientList.checkClient_by_ID(userID)
+    if not existClientFlag:
+        emit('Error','Error: Client doest not exist')
+        print('Error: Client doest not exist')
+    elif len(existClient)>1:
+        emit('Error','Error: Too many same client')
+        print('Error: Too many same client')
+    else:
+        existClient = existClient[0]
+        roomID = existClient.getRoom()
+        existRoom, existRoomClient = clientList.checkClient_by_room(roomID)
+        if not existRoom:
+            emit('Error','Error: Room does not exist')
+            print('Error: Room does not exist')
+        else:
+            emit('leaveRoom',userID+' leaves room '+roomID,to=roomID)
+            print(userID+' leaves room '+roomID)
+            leave_room(roomID)
+            clientList.removeClient_by_ID(userID)
 
 if __name__ == '__main__':
     socketio.run(app,host='127.0.0.1',port=5001)

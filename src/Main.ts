@@ -136,8 +136,9 @@ class Main extends eui.UILayer {
         console.log('Change state to '+data)
         this.nextGameState = parseInt(data)
         if(this.currentGameState==this.nextGameState){
-            console.log('Do not need change')
-            this.socket.emit('changeGameStateRes',this.currentGameState.toString())
+            this.foceChangeState=true
+            //console.log('Do not need change')
+            //this.socket.emit('changeGameStateRes',this.currentGameState.toString())
         }
     }
 
@@ -169,6 +170,8 @@ class Main extends eui.UILayer {
     private sumFPS = 0;
     private sumNum = 0;
     private FPSlabel: egret.TextField = new egret.TextField();
+
+    private foceChangeState = false
 
     private feedbackStr = '';
     private idStr = '';
@@ -223,7 +226,7 @@ class Main extends eui.UILayer {
                 }
             }
         }
-        if(this.nextGameState!=this.currentGameState){
+        if(this.nextGameState!=this.currentGameState || this.foceChangeState){
             // remove old scene
             if(this.currentGameState!=-1){
                 for(let i=0;i<this.numChildren;i++){
@@ -232,6 +235,7 @@ class Main extends eui.UILayer {
             }
             // build new scene
             this.currentGameState = this.nextGameState;
+            this.foceChangeState=false
             if(this.connect_flag){
                 this.socket.emit('changeGameStateRes',this.currentGameState.toString())
             }

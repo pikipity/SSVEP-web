@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>668</width>
-    <height>521</height>
+    <width>684</width>
+    <height>683</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,22 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>20</y>
+      <x>20</x>
+      <y>10</y>
       <width>351</width>
-      <height>441</height>
+      <height>611</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="3,3,3,1">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="4,5,4,4">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <property name="topMargin">
+      <number>3</number>
+     </property>
+     <property name="bottomMargin">
+      <number>3</number>
+     </property>
      <item>
       <widget class="QGroupBox" name="groupBox_3">
        <property name="title">
@@ -112,7 +121,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>20</y>
+          <y>70</y>
           <width>329</width>
           <height>41</height>
          </rect>
@@ -138,7 +147,7 @@
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>70</y>
+          <y>120</y>
           <width>331</width>
           <height>41</height>
          </rect>
@@ -169,6 +178,38 @@
          </item>
         </layout>
        </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>329</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Connection to Server</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="connectServerFlag">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Disconnection</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </item>
      <item>
@@ -182,10 +223,17 @@
           <x>10</x>
           <y>30</y>
           <width>331</width>
-          <height>80</height>
+          <height>83</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QPushButton" name="enterRoomButton">
+           <property name="text">
+            <string>Enter a room</string>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="1">
           <widget class="QLineEdit" name="roomIDEntry">
            <property name="inputMask">
@@ -199,17 +247,17 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="enterRoomButton">
-           <property name="text">
-            <string>Enter a room</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="0">
           <widget class="QPushButton" name="autoCreateRoomButton">
            <property name="text">
             <string>Auto create a room</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="leaveRoomButton">
+           <property name="text">
+            <string>Leave room</string>
            </property>
           </widget>
          </item>
@@ -218,31 +266,79 @@
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <property name="spacing">
-        <number>20</number>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="title">
+        <string>Edit Task</string>
        </property>
-       <property name="leftMargin">
-        <number>20</number>
-       </property>
-       <property name="rightMargin">
-        <number>20</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="scheduleTaskButton">
-         <property name="text">
-          <string>Schedule Task</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="startTaskButton">
-         <property name="text">
-          <string>Start Task</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>331</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="taskDisplay">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string>No Task</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Current Task: </string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="scheduleTaskButton">
+             <property name="text">
+              <string>Schedule Task</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="loadTaskButton">
+             <property name="text">
+              <string>Load Task</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QPushButton" name="startTaskButton">
+             <property name="text">
+              <string>Start Task</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QPushButton" name="stopTaskButton">
+             <property name="text">
+              <string>Stop Task</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -250,9 +346,9 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>20</y>
+      <y>10</y>
       <width>271</width>
-      <height>441</height>
+      <height>611</height>
      </rect>
     </property>
     <property name="title">
@@ -264,7 +360,7 @@
        <x>10</x>
        <y>20</y>
        <width>251</width>
-       <height>401</height>
+       <height>571</height>
       </rect>
      </property>
      <property name="readOnly">
@@ -281,7 +377,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>668</width>
+     <width>684</width>
      <height>23</height>
     </rect>
    </property>
