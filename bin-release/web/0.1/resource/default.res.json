@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "WallBack_jpg,black_color_jpg,white_color_jpg",
+			"keys": "WallBack_jpg,black_color_jpg,white_color_jpg,return_bound_png",
 			"name": "preload"
 		}
 	],
@@ -20,6 +20,11 @@
 			"url": "assets/black_color.jpg",
 			"type": "image",
 			"name": "black_color_jpg"
+		},
+		{
+			"url": "assets/return_bound.png",
+			"type": "image",
+			"name": "return_bound_png"
 		}
 	]
 }
