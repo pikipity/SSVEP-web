@@ -137,7 +137,10 @@
          <item>
           <widget class="QLineEdit" name="serverPathStr">
            <property name="text">
-            <string>http://127.0.0.1:5001/</string>
+            <string>http://zewang.site:82/</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>

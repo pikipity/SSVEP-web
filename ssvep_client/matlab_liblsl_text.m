@@ -19,6 +19,6 @@ while true
     [mrks,ts] = inlet.pull_sample(0);
     % and display it
     if ~isempty(mrks)
-        disp(mrks);
+        disp([num2str(ts) ' , ' mrks]);
     end
 end

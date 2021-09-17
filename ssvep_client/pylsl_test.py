@@ -16,9 +16,9 @@ print("now sending markers...")
 markernames = ['Test', 'Blah', 'Marker', 'XXX', 'Testtest', 'Test-1-2-3']
 N=0
 while True:
-    # N+=1
-    # if N>10:
-    #     break
+    N+=1
+    if N>10:
+        break
     # pick a sample to send an wait for a bit
     send_text=random.choice(markernames)
     outlet.push_sample([send_text])

@@ -1,5 +1,6 @@
 class EndScene extends eui.Component{
     private returnbutton_comp: eui.Button
+    private returnbutton_comp2: eui.Button
 
     private connect_flag;
     
@@ -12,6 +13,9 @@ class EndScene extends eui.Component{
 
         this.returnbutton_comp.touchEnabled = true;
         this.returnbutton_comp.addEventListener(egret.TouchEvent.TOUCH_TAP, this.beginState, this)
+
+        this.returnbutton_comp2.touchEnabled = true;
+        this.returnbutton_comp2.addEventListener(egret.TouchEvent.TOUCH_TAP, this.zeroState, this)
         
     }
 
@@ -26,5 +30,9 @@ class EndScene extends eui.Component{
         }else{
             this.gameState = 0;
         }
+    }
+
+    private zeroState(){
+        this.gameState = 0;
     }
 }
