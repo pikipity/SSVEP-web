@@ -2,13 +2,13 @@
 import random
 import time
 
-from pylsl import StreamInfo, StreamOutlet
+from pylsl import StreamInfo, StreamOutlet #StreamInlet
 
 
-info = StreamInfo('MyMarkerStream', 'Markers', 1, 0, 'string', 'myuidw43536')
+info = StreamInfo('MyMarkerStream', 'Markers', 1, 0, 'string', 'myuidw43536') # streams = resolve_stream('type', 'Markers')
 
 # next make an outlet
-outlet = StreamOutlet(info)
+outlet = StreamOutlet(info) # inlet = StreamInlet(streams[0])
 
 time.sleep(5)
 
@@ -21,7 +21,7 @@ while True:
         break
     # pick a sample to send an wait for a bit
     send_text=random.choice(markernames)
-    outlet.push_sample([send_text])
+    outlet.push_sample([send_text]) # sample, timestamp = inlet.pull_sample(0)
     print(send_text)
     time.sleep(1)
 outlet.__del__()

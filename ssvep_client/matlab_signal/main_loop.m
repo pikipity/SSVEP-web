@@ -14,17 +14,18 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
                    'start_all'};
     
     lib = lsl_loadlib();
-    receiver_info = lsl_streaminfo(lib,'MarkerStream', 'Markers',...
+    marker_info = lsl_streaminfo(lib,'MarkerStream', 'Markers',...
                                       1, 0, 'cf_string', ['id_MarkerStream']);
-    sender_info = lsl_streaminfo(lib,'ResponseStream', 'Responses',...
+    response_info = lsl_streaminfo(lib,'ResponseStream', 'Responses',...
                                       1, 0, 'cf_string', ['id_ResponseStream']);
-    marker_receiver = lsl_inlet(receiver_info);% [mrks,ts] = inlet.pull_sample(0);
-    response_sender = lsl_outlet(sender_info);% outlet.push_sample({mrk});
+    marker_receiver = lsl_inlet(marker_info);% [mrks,ts] = inlet.pull_sample(0);
+    response_sender = lsl_outlet(response_info);% outlet.push_sample({mrk});
     data_store=[];
     if test_flag
         data_sender = data_sender_test(fs);
         start_ind=-100;
         start_time=0;
+        analysis_flag=0;
         while 1
             % receive marker
             [mrks,ts] = marker_receiver.pull_sample(0);
@@ -34,8 +35,10 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
             switch mrks
                 case marker_string{1}
                     markervalue=1;
+                    analysis_flag=1;
                 case marker_string{2}
                     markervalue=2;
+                    analysis_flag=0;
                 case marker_string{3}
                     break_flag=1;
                 case marker_string{4}
@@ -74,14 +77,16 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
             end
             data_store=[data_store data];
             % analysis
-            switch method
-                case 'None'
-                    response='';
-                otherwise
-                    response=test_analysis_random(f_stim,phase_stim,label_stim);
-            end
-            if ~isempty(response)
-                response_sender.push_sample({response});
+            if analysis_flag
+                switch method
+                    case 'None'
+                        response='';
+                    otherwise
+                        response=test_analysis_random(f_stim,phase_stim,label_stim);
+                end
+                if ~isempty(response)
+                    response_sender.push_sample({response});
+                end
             end
         end
     end

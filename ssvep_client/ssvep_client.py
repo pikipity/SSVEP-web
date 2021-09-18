@@ -7,6 +7,8 @@ from PyQt5.QtWidgets import QMessageBox, QFileDialog
 from PyQt5.QtCore import pyqtSignal
 import sys, os
 
+from pylsl import StreamInfo, StreamOutlet, StreamInlet
+
 import pickle
 
 from clockClass import clockClass
@@ -40,6 +42,9 @@ class Ui(QtWidgets.QMainWindow):
     leaveRoom_signal = pyqtSignal(str)
     def _handle_leaveRoom_fun(self,data):
         self.leaveRoom_signal.emit(data)
+    SSVEPResponse_signal = pyqtSignal(str)
+    def _handle_SSVEPResponse_fun(self,data):
+        self.SSVEPResponse_signal.emit(data)
         
     consoleDisplay_signal = pyqtSignal(str)
     
@@ -66,6 +71,14 @@ class Ui(QtWidgets.QMainWindow):
         self.changeTrial_signal.connect(self.changeTrial_fun)
         self.sio.on('leaveRoom',self._handle_leaveRoom_fun)
         self.leaveRoom_signal.connect(self.leaveRoom_fun)
+        self.sio.on('SSVEPResponse',self._handle_SSVEPResponse_fun)
+        self.SSVEPResponse_signal.connect(self.SSVEPResponse_fun)
+        #
+        self.marker_info = StreamInfo('MarkerStream','Markers',1,0,'string','id_MarkerStream')
+        self.response_info = StreamInfo('ResponseStream', 'Responses',1, 0, 'string', 'id_ResponseStream')
+        self.marker_sender = StreamOutlet(self.marker_info)
+        self.response_receiver = StreamInlet(self.response_info)
+        self.marker_string=['start_trial','end_trial','end_all','start_all']
         #
         self.currentTask = None
         self.taskValue={'Cue':1,'Flash':2,'Break':3}
@@ -119,6 +132,10 @@ class Ui(QtWidgets.QMainWindow):
         
     def closeEvent(self, event):
         self.sio.disconnect()
+        self.marker_info.__del__()
+        self.response_info.__del__()
+        self.marker_sender.__del__()
+        self.response_receiver.__del__()
         event.accept()
 #         reply = QMessageBox.question(self, 'Window Close', 'Are you sure you want to close the window?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 # 		if reply == QMessageBox.Yes:
@@ -198,6 +215,9 @@ class Ui(QtWidgets.QMainWindow):
         self.nextGameState=int(data)
         self.forceChangeState=True
         self.consoleDisplay_signal.emit('change state to '+data)
+    
+    def SSVEPResponse_fun(self,data):
+        self.consoleDisplay_signal.emit('SSVEP response is '+data)
         
     def changeTrial_fun(self,data):
         self.consoleDisplay_signal.emit('change trial to '+data)
@@ -250,6 +270,11 @@ class Ui(QtWidgets.QMainWindow):
     def stopTaskButtonFun(self):
         self.taskContinue_flag=False
         
+    def clearn_response_receiver(self):
+        sample='init'
+        while sample is not None:
+            sample, timestamp = self.response_receiver.pull_sample(0)
+        
             
     def main_task(self):
         self.sio.emit('AskSynchronization','')
@@ -259,6 +284,9 @@ class Ui(QtWidgets.QMainWindow):
         task_list=self.currentTask.taskList
         currentTask=None
         nextTask=None
+        self.clearn_response_receiver()
+        self.marker_sender.push_sample([self.marker_string[3]])
+        adwdsas # start matlab here
         while self.taskContinue_flag:
             if self.nextGameState!=self.currentGameState or self.forceChangeState:
                 if self.currentGameState==-100 and (not self.nextGameState==101) and (not self.nextGameState==100):
@@ -272,6 +300,7 @@ class Ui(QtWidgets.QMainWindow):
                 elif self.currentGameState==0:
                     break
                 elif self.currentGameState==1 or self.currentGameState==2 or self.currentGameState==3:
+                    self.marker_sender.push_sample([self.marker_string[0]])
                     task_step=task_step+1
                     currentTask=task_list[task_step]
                     currentTask_time=float(currentTask.searchProperty('time'))
@@ -346,12 +375,25 @@ class Ui(QtWidgets.QMainWindow):
                 else:
                     clock_ouput, clock_output_time=self.state_clock.runClock()
                     if clock_ouput>=0:
+                        if self.currentGameState==2:
+                            self.marker_sender.push_sample([self.marker_string[1]])
                         #self.consoleDisplay_signal.emit('Time: '+str(clock_output_time)+' s')
                         self.sio.emit('changeGameState',str(clock_ouput))
                         #nextGameState=clock_ouput
+                    else:
+                         if self.currentGameState==2:
+                            sample, timestamp = self.response_receiver.pull_sample(0)
+                            if sample is not None:
+                                if type(sample)==type([]):
+                                    sample=sample[0]
+                                self.sio.emit('SSVEPResponse',sample)
+                                clock_ouput = self.state_clock.targetState
+                                self.marker_sender.push_sample([self.marker_string[1]])
+                                self.sio.emit('changeGameState',str(clock_ouput))
         if self.connect_flag:
             self.sio.emit('changeGameState',str(100))
         self.taskContinue_flag=False
+        self.marker_sender.push_sample([self.marker_string[2]])
         self.consoleDisplay_signal.emit('Task Finish')
         
     def scheduleTaskButtonFun(self):
