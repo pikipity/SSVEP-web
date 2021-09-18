@@ -16,7 +16,7 @@ inlet = lsl_inlet(result{1});
 disp('Now receiving data...');
 while true
     % get data from the inlet
-    [mrks,ts] = inlet.pull_sample(0);
+    [mrks,ts] = inlet.pull_sample(0);%outlet.push_sample({mrk});
     % and display it
     if ~isempty(mrks)
         disp([num2str(ts) ' , ' mrks]);
