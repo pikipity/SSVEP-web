@@ -109,6 +109,7 @@ class editSubtaskWindow(QtWidgets.QMainWindow):
             self.breakGroup.show()
             
 class editStimInfoWindow(QtWidgets.QMainWindow):
+    send_list_signal = pyqtSignal(list)
     def __init__(self,freqList=[],phaseList=[],labelList=[],numTarget=12):
         super(editStimInfoWindow, self).__init__()
         uic.loadUi('inputStimInfoWindow.ui', self)
@@ -119,7 +120,78 @@ class editStimInfoWindow(QtWidgets.QMainWindow):
         self.labelList=labelList
         #
         self.infoTable=self.findChild(QtWidgets.QTableWidget,'infoTable')
+        self.infoTable.itemChanged.connect(self.itemChangeCheck)
         self.infoTable.setRowCount(numTarget)
+        for i in range(len(self.freqList)):
+            self.infoTable.setItem(i,0,QtWidgets.QTableWidgetItem(str(self.freqList[i])))
+        for i in range(len(self.phaseList)):
+            self.infoTable.setItem(i,1,QtWidgets.QTableWidgetItem(str(self.phaseList[i])))
+        for i in range(len(self.labelList)):
+            self.infoTable.setItem(i,2,QtWidgets.QTableWidgetItem(str(self.labelList[i])))
+        #
+        self.clearButton=self.findChild(QtWidgets.QPushButton,'clearButton')
+        self.clearButton.clicked.connect(self.clearButtonFun)
+        self.cancelButton=self.findChild(QtWidgets.QPushButton,'cancelButton')
+        self.cancelButton.clicked.connect(self.cancelButtonFun)
+        self.okButton=self.findChild(QtWidgets.QPushButton,'okButton')
+        self.okButton.clicked.connect(self.okButtonFun)
+        self.changeStimNumButton=self.findChild(QtWidgets.QPushButton,'changeStimNumButton')
+        self.changeStimNumButton.clicked.connect(self.changeStimNumButtonFun)
+    def changeStimNumButtonFun(self):
+        inputValue, ok = QInputDialog.getInt(self, 'Number of targets', 'Total number of targets:',1,1,99,1)
+        if ok:
+            self.infoTable.setRowCount(inputValue)
+    def itemChangeCheck(self,item):
+        row=item.row()
+        col=item.column()
+        content=item.text()
+        if len(content)!=0:
+            if col == 0 or col == 1:
+                try:
+                    content=float(content)
+                except:
+                    QMessageBox.warning(self, 'Enter wrong value', 'Freqeuncy or phase must be a number.')
+                    content='' 
+        else:
+            content=''
+        item.setText(str(content))
+        #self.infoTable.setItem(row,col,QtWidgets.QTableWidgetItem(str(content)))
+    def getTableContent(self,row,col):
+        currentItem=self.infoTable.item(row,col)
+        if currentItem is None:
+            return ''
+        else:
+            return currentItem.text()
+    def updateList(self):
+        numTarget=self.infoTable.rowCount()
+        self.freqList=[]
+        self.phaseList=[]
+        self.labelList=[]
+        for i in range(numTarget):
+            currentItem=self.getTableContent(i,0)
+            if len(currentItem)!=0:
+                self.freqList.append(float(currentItem))
+            currentItem=self.getTableContent(i,1)
+            if len(currentItem)!=0:
+                self.phaseList.append(float(currentItem))
+            currentItem=self.getTableContent(i,2)
+            if len(currentItem)!=0:
+                self.labelList.append(currentItem)
+    def okButtonFun(self):
+        self.updateList()
+        min_len=min(len(self.freqList),len(self.phaseList),len(self.labelList))
+        if len(self.freqList)==min_len and len(self.phaseList)==min_len and len(self.labelList)==min_len:
+            propertyList=[]
+            propertyList.append(TaskProperty('freq',self.freqList))
+            propertyList.append(TaskProperty('phase',self.phaseList))
+            propertyList.append(TaskProperty('label',self.labelList))
+            self.send_list_signal.emit(propertyList)
+        else:
+            QMessageBox.warning(self, 'Table Wrong Contents', 'Please fill all table or clear table.')
+    def clearButtonFun(self):
+        self.infoTable.clearContents()
+    def cancelButtonFun(self):
+        self.close()
 
 class editTaskWindow(QtWidgets.QMainWindow):
     send_currentTask_signal = pyqtSignal(MainTask)
@@ -187,7 +259,12 @@ class editTaskWindow(QtWidgets.QMainWindow):
                 numTarget=0
         if numTarget>0:
             self.editStimInfoWindow=editStimInfoWindow(freqList,phaseList,labelList,numTarget)
+            self.editStimInfoWindow.send_list_signal.connect(self.updateMainTaskProperty)
             self.editStimInfoWindow.show()
+    def updateMainTaskProperty(self,propertyList):
+        self.currentTask.propertyList=propertyList
+        self.editStimInfoWindow.close()
+        self.updateTaskDisplay()
     def renameTaskButtonFun(self):
         text, ok = QInputDialog.getText(self, 'Rename Task', 'Enter task name:')
         if ok and (not text==''):
@@ -303,22 +380,29 @@ class editTaskWindow(QtWidgets.QMainWindow):
         root.setText(1,self.currentTask.value)
         root.setText(2,self.currentTask.classValue)
         #
-        if len(self.currentTask.taskList)==0:
+        if len(self.currentTask.taskList)==0 and len(self.currentTask.propertyList)==0:
             child=QtWidgets.QTreeWidgetItem(root)
             child.setText(0,'')
             child.setText(1,'')
             child.setText(2,'')
         else:
-            for subTask in self.currentTask.taskList:
-                child=QtWidgets.QTreeWidgetItem(root)
-                child.setText(0,subTask.name)
-                child.setText(1,str(subTask.value))
-                child.setText(2,subTask.classValue)
-                for propertyItem in subTask.propertyList:
-                    propertyChild=QtWidgets.QTreeWidgetItem(child)
+            if len(self.currentTask.propertyList)!=0:
+                for propertyItem in self.currentTask.propertyList:
+                    propertyChild=QtWidgets.QTreeWidgetItem(root)
                     propertyChild.setText(0,propertyItem.name)
-                    propertyChild.setText(1,propertyItem.value)
+                    propertyChild.setText(1,str(propertyItem.value))
                     propertyChild.setText(2,propertyItem.classValue)
+            if len(self.currentTask.taskList)!=0:
+                for subTask in self.currentTask.taskList:
+                    child=QtWidgets.QTreeWidgetItem(root)
+                    child.setText(0,subTask.name)
+                    child.setText(1,str(subTask.value))
+                    child.setText(2,subTask.classValue)
+                    for propertyItem in subTask.propertyList:
+                        propertyChild=QtWidgets.QTreeWidgetItem(child)
+                        propertyChild.setText(0,propertyItem.name)
+                        propertyChild.setText(1,propertyItem.value)
+                        propertyChild.setText(2,propertyItem.classValue)
         #
         self.taskDisplay.addTopLevelItem(root)
         self.taskDisplay.expandAll()
