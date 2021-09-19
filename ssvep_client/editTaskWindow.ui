@@ -105,10 +105,17 @@
       <x>430</x>
       <y>20</y>
       <width>111</width>
-      <height>181</height>
+      <height>192</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QPushButton" name="editStimInfoButton">
+       <property name="text">
+        <string>Edit Stimulus Info</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="trainTaskButton">
        <property name="text">

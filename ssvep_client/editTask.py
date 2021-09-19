@@ -107,6 +107,19 @@ class editSubtaskWindow(QtWidgets.QMainWindow):
             self.cueGroup.hide()
             self.flashGroup.hide()
             self.breakGroup.show()
+            
+class editStimInfoWindow(QtWidgets.QMainWindow):
+    def __init__(self,freqList=[],phaseList=[],labelList=[],numTarget=12):
+        super(editStimInfoWindow, self).__init__()
+        uic.loadUi('inputStimInfoWindow.ui', self)
+        self.setWindowTitle("Stimulus Infomation")
+        #
+        self.freqList=freqList
+        self.phaseList=phaseList
+        self.labelList=labelList
+        #
+        self.infoTable=self.findChild(QtWidgets.QTableWidget,'infoTable')
+        self.infoTable.setRowCount(numTarget)
 
 class editTaskWindow(QtWidgets.QMainWindow):
     send_currentTask_signal = pyqtSignal(MainTask)
@@ -117,6 +130,10 @@ class editTaskWindow(QtWidgets.QMainWindow):
         #
         if existTask is None:
             self.currentTask=MainTask('DefaultTask')
+            self.currentTask.propertyList=[]
+            self.currentTask.propertyList.append(TaskProperty('freq',[]))
+            self.currentTask.propertyList.append(TaskProperty('phase',[]))
+            self.currentTask.propertyList.append(TaskProperty('label',[]))
         else:
             self.currentTask=existTask
         self.selectIndex=None
@@ -147,8 +164,30 @@ class editTaskWindow(QtWidgets.QMainWindow):
         self.okButton.clicked.connect(self.okButtonFun)
         self.saveTaskButton=self.findChild(QtWidgets.QPushButton,'saveTaskButton')
         self.saveTaskButton.clicked.connect(self.saveTaskButtonFun)
+        self.editStimInfoButton=self.findChild(QtWidgets.QPushButton,'editStimInfoButton')
+        self.editStimInfoButton.clicked.connect(self.editStimInfoButtonFun)
         #
         self.updateTaskDisplay()
+    def editStimInfoButtonFun(self):
+        freqList=self.currentTask.searchProperty('freq')
+        if freqList is None:
+            freqList=[]
+        phaseList=self.currentTask.searchProperty('phase')
+        if phaseList is None:
+            phaseList=[]
+        labelList=self.currentTask.searchProperty('label')
+        if labelList is None:
+            labelList=[]
+        numTarget=max(len(freqList),len(phaseList),len(labelList))
+        if numTarget<=0:
+            inputValue, ok = QInputDialog.getInt(self, 'Number of targets', 'Total number of targets:',1,1,99,1)
+            if ok:
+                numTarget=inputValue
+            else:
+                numTarget=0
+        if numTarget>0:
+            self.editStimInfoWindow=editStimInfoWindow(freqList,phaseList,labelList,numTarget)
+            self.editStimInfoWindow.show()
     def renameTaskButtonFun(self):
         text, ok = QInputDialog.getText(self, 'Rename Task', 'Enter task name:')
         if ok and (not text==''):

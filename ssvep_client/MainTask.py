@@ -26,6 +26,14 @@ class MainTask:
         self.value=''
         self.classValue='MainTask'
         self.taskList=[]
+        self.propertyList=[]
+    def searchProperty(self,propertyName):
+        propertyValue=None
+        for taskProperty in self.propertyList:
+            if taskProperty.name==propertyName:
+                propertyValue=taskProperty.value
+                break
+        return propertyValue
     def addNewSubtask(self,newSubtaskName,newSubtaskProperty):
         newSubtask=SubTask(len(self.taskList),newSubtaskName,newSubtaskProperty)
         self.taskList.append(newSubtask)
