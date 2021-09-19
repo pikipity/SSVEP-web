@@ -92,6 +92,8 @@ class Ui(QtWidgets.QMainWindow):
         self.currentGameState = 0
         self.nextGameState = -1
         self.forceChangeState=False
+        self.mainPath=os.getcwd()
+        self.matlabPath=os.path.join(self.mainPath,'matlab_signal')
         #
         self.idDisplay = self.findChild(QtWidgets.QLineEdit, 'idStr')
         self.roomDisplay = self.findChild(QtWidgets.QLineEdit, 'roomStr')
