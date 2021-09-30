@@ -102,7 +102,6 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
             %
             tmp_ln=min(fs*50,size(data_store,2));
             plot_v=data_store(end,:);
-            disp(tmp_ln)
             ln.XData=plot_t((end-tmp_ln+1):end);
             ln.YData=plot_v((end-tmp_ln+1):end);
             %
