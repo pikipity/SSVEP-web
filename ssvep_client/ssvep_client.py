@@ -306,7 +306,7 @@ class Ui(QtWidgets.QMainWindow):
         #     self.consoleDisplay_signal.emit('Wait '+str(wait_N))
         #     time.sleep(1)
         #     wait_N=wait_N-1
-        self.marker_sender.push_sample([self.marker_string[3]])
+        # self.marker_sender.push_sample([self.marker_string[3]])
         while self.taskContinue_flag:
             if self.nextGameState!=self.currentGameState or self.forceChangeState:
                 if self.currentGameState==-100 and (not self.nextGameState==101) and (not self.nextGameState==100):

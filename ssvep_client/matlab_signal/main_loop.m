@@ -24,12 +24,22 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
     marker_receiver = lsl_inlet(marker_info);% [mrks,ts] = inlet.pull_sample(0);
     response_sender = lsl_outlet(response_info);% outlet.push_sample({mrk});
     %
+    disp_len=5;
     figure
-    plot_t=linspace(0,50,fs*50);
+    subplot(2,1,1)
+    plot_t=linspace(0,disp_len,fs*disp_len);
     plot_v=zeros(1,length(plot_t));
     ln=plot(plot_t,plot_v);
-    set(gca,'Xtick',0:1:50)
-    axis([0 50 0 5])
+    set(gca,'Xtick',0:1:disp_len)
+    axis([0 disp_len 0 5])
+    title('Trigger')
+    subplot(2,1,2)
+    plot_t=linspace(0,disp_len,fs*disp_len);
+    plot_v=zeros(1,length(plot_t));
+    ln_eeg=plot(plot_t,plot_v);
+    set(gca,'Xtick',0:1:disp_len)
+    axis([0 disp_len -100 100])
+    title('EEG')
     %
     for n=1:3
         disp(['wait ' num2str(n)])
@@ -101,10 +111,13 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
             end
             data_store=[data_store data];
             %
-            tmp_ln=min(fs*50,size(data_store,2));
+            tmp_ln=min(fs*disp_len,size(data_store,2));
             plot_v=data_store(end,:);
             ln.XData=plot_t((end-tmp_ln+1):end);
             ln.YData=plot_v((end-tmp_ln+1):end);
+            plot_v=data_store(2,:);
+            ln_eeg.XData=plot_t((end-tmp_ln+1):end);
+            ln_eeg.YData=plot_v((end-tmp_ln+1):end);
             %
             % analysis
             if analysis_flag
