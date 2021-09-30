@@ -176,7 +176,7 @@ class Ui(QtWidgets.QMainWindow):
     def connect_fun(self):
         localtime = time.asctime( time.localtime(time.time()) )
         self.connectServerFlag.setText('Connected')
-        self.consoleDisplay_signal.emit('Connect\n---- Start AT '+localtime+' ----\n')
+        self.consoleDisplay_signal.emit('Connect at '+self.sio.connection_url+'\n---- Start AT '+localtime+' ----\n')
         
     def disconnect_fun(self):
         self.connect_flag=False
@@ -184,7 +184,7 @@ class Ui(QtWidgets.QMainWindow):
         self.idStr=''
         self.connectServerFlag.setText('Disconnected')
         localtime = time.asctime( time.localtime(time.time()) )
-        self.consoleDisplay_signal.emit('\n---- End AT '+localtime+' ----\nDisconnect')
+        self.consoleDisplay_signal.emit('\n---- End AT '+localtime+' ----\nDisconnect at '+self.sio.connection_url)
         self.updateStateDisplay()
         # if self.currentGameState>0 and self.currentGameState<999:
         #     try:
@@ -288,7 +288,7 @@ class Ui(QtWidgets.QMainWindow):
         nextTask=None
         self.clearn_response_receiver()
         self.marker_sender.push_sample([self.marker_string[3]])
-        adwdsas # start matlab here
+        self.consoleDisplay_signal.emit(self.matlabPath) # start matlab here
         while self.taskContinue_flag:
             if self.nextGameState!=self.currentGameState or self.forceChangeState:
                 if self.currentGameState==-100 and (not self.nextGameState==101) and (not self.nextGameState==100):
