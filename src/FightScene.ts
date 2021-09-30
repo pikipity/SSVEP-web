@@ -156,7 +156,7 @@ class FightScene extends eui.Component{
                     this.cueList[i].$setText('');
                 }
             }
-        }else if(state==2){
+        }else if(state==2 || state==3){
             for(let i=0;i<this.cueList.length;i++){
                 this.cueList[i].textColor = 0xFFFFFF;
                 this.cueList[i].$setText(this.keyList[i]);

@@ -1,4 +1,4 @@
-classdef data_sender_test
+classdef data_sender_test < handle
     properties (Hidden)
         store_data=[];
         sampling_rate=250;
@@ -12,13 +12,19 @@ classdef data_sender_test
             self.sampling_rate=fs;
         end
         function result=get_data(self)
-            currentTime=cputime;
-            if self.preTime~=-1 && (currentTime-self.preTime)<(self.sample_num*self.sampling_rate)
-                pause(self.sample_num*self.sampling_rate-(currentTime-self.preTime))
+            currentTime=clock;
+            if length(self.preTime)>1 && abs(etime(currentTime,self.preTime))<(self.sample_num*(1/self.sampling_rate))
+%                 disp(self.sample_num*(1/self.sampling_rate)-abs(etime(currentTime,self.preTime)))
+                pause(self.sample_num*(1/self.sampling_rate)-abs(etime(currentTime,self.preTime)))
             end
-            self.preTime=currentTime;
+            self.update_preTime(currentTime);
+%             disp(self.preTime)
             result=self.store_data(:,1:self.sample_num);
-            self.update_store_data()
+            self.update_store_data();
+        end
+        
+        function self = update_preTime(self,currentTime)
+            self.preTime=currentTime;
         end
         
         function self = update_store_data(self)

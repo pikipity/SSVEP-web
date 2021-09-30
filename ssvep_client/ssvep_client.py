@@ -10,6 +10,7 @@ import sys, os
 from pylsl import StreamInfo, StreamOutlet, StreamInlet
 
 import pickle
+import subprocess
 
 from clockClass import clockClass
 from editTask import editTaskWindow
@@ -244,6 +245,7 @@ class Ui(QtWidgets.QMainWindow):
             
     def enterRoomButtonFun(self):
         roomID = self.roomIDEntryDisplay.text()
+        self.roomIDEntryDisplay.setText('')
         if len(roomID)==0:
             self.consoleDisplay_signal.emit('Please enter stimulus room ID')
         else:
@@ -287,8 +289,24 @@ class Ui(QtWidgets.QMainWindow):
         currentTask=None
         nextTask=None
         self.clearn_response_receiver()
+        freq_list=str(self.currentTask.searchProperty('freq'))
+        phase_list=str(self.currentTask.searchProperty('phase'))
+        label_list=str(self.currentTask.searchProperty('label'))
+        label_list='{'+label_list[1:len(label_list)-1]+'}'
+        matlab_command='matlab -nodesktop -nosplash -r "cd '+self.matlabPath+';'+'main_loop(1,250,'+freq_list+','+phase_list+','+label_list+',\'cca\');quit;"'
+        subprocess.run(matlab_command) # start matlab here
+        sample = None
+        while sample != 'OK':
+            sample, timestamp = self.response_receiver.pull_sample(0)
+            if sample is not None:
+                sample=sample[0]
+        self.clearn_response_receiver()
+        # wait_N=5
+        # while wait_N>0:
+        #     self.consoleDisplay_signal.emit('Wait '+str(wait_N))
+        #     time.sleep(1)
+        #     wait_N=wait_N-1
         self.marker_sender.push_sample([self.marker_string[3]])
-        self.consoleDisplay_signal.emit(self.matlabPath) # start matlab here
         while self.taskContinue_flag:
             if self.nextGameState!=self.currentGameState or self.forceChangeState:
                 if self.currentGameState==-100 and (not self.nextGameState==101) and (not self.nextGameState==100):
@@ -302,7 +320,8 @@ class Ui(QtWidgets.QMainWindow):
                 elif self.currentGameState==0:
                     break
                 elif self.currentGameState==1 or self.currentGameState==2 or self.currentGameState==3:
-                    self.marker_sender.push_sample([self.marker_string[0]])
+                    if self.currentGameState==2:
+                        self.marker_sender.push_sample([self.marker_string[0]])
                     task_step=task_step+1
                     currentTask=task_list[task_step]
                     currentTask_time=float(currentTask.searchProperty('time'))
