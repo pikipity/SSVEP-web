@@ -28,6 +28,7 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
     plot_t=linspace(0,50,fs*50);
     plot_v=zeros(1,length(plot_t));
     ln=plot(plot_t,plot_v);
+    set(gca,'Xtick',0:1:50)
     axis([0 50 0 5])
     %
     for n=1:3
@@ -111,7 +112,15 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
                     case 'None'
                         response='';
                     otherwise
-                        response=test_analysis_random(f_stim,phase_stim,label_stim,fs,data_store);
+                        label_sig=data_store(end,:);
+                        start_ind_tmp=find(label_sig==1);
+                        if isempty(start_ind_tmp)
+                            response='';
+                        else
+                            start_ind_tmp=start_ind_tmp(end);
+                            data_analysis=data_store(:,start_ind_tmp:end);
+                            response=test_analysis_random(f_stim,phase_stim,label_stim,fs,data_analysis,1);
+                        end
                 end
                 if ~isempty(response)
                     response_sender.push_sample({response});
@@ -128,4 +137,12 @@ function main_loop(test_flag,fs,f_stim,phase_stim,label_stim,method)
     response_sender.delete();
     %
     close all;
+    %
+    answer = questdlg('Save Data?', ...
+                    'SAVE DATA', ...
+                    'Yes','No','No');
+    switch answer
+        case 'Yes'
+            save(['SaveData_' datestr(now,'yyyy-mm-dd_HH-MM-SS') '.mat'],'data_store','-v7.3')
+    end
 end

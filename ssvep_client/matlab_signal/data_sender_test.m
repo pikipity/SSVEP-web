@@ -17,7 +17,7 @@ classdef data_sender_test < handle
 %                 disp(self.sample_num*(1/self.sampling_rate)-abs(etime(currentTime,self.preTime)))
                 pause(self.sample_num*(1/self.sampling_rate)-abs(etime(currentTime,self.preTime)))
             end
-            self.update_preTime(currentTime);
+            self.update_preTime(clock);
 %             disp(self.preTime)
             result=self.store_data(:,1:self.sample_num);
             self.update_store_data();

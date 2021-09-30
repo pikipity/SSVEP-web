@@ -1,2 +1,3 @@
 TestData/*.mat
 ssvep_client/__pycache__/*
+ssvep_client/matlab_signal/SaveData_*
