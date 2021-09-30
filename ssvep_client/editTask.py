@@ -310,31 +310,32 @@ class editTaskWindow(QtWidgets.QMainWindow):
             inputValue, ok = QInputDialog.getItem(self, 'Classification method', 'Select a classification method:', self.methodList,0,False)
             if ok:
                 targetOrder=list(range(numTarget))
-                reply = QMessageBox.information(self, 'Random Order', 'Do you need random flash targets?', 
-                                                QMessageBox.Ok | QMessageBox.Close, QMessageBox.Close)
-                if reply == QMessageBox.Ok:
+                reply = QMessageBox.question(self, 'Random Order', 'Do you need random flash targets?', 
+                                                QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel, QMessageBox.No)
+                if reply == QMessageBox.Yes:
                     random.shuffle(targetOrder)
-                self.currentTask.clear()
-                for i in range(numTarget):
-                    # cue
-                    taskName='Cue'
-                    propertyList=[]
-                    propertyList.append(TaskProperty('time',str(1)))
-                    propertyList.append(TaskProperty('target', str(targetOrder[i]+1)))
-                    self.currentTask.addNewSubtask(taskName,propertyList)
-                    # flash
-                    taskName='Flash'
-                    propertyList=[]
-                    propertyList.append(TaskProperty('time',str(6)))
-                    propertyList.append(TaskProperty('method',inputValue))
-                    propertyList.append(TaskProperty('target',str(targetOrder[i]+1)))
-                    self.currentTask.addNewSubtask(taskName,propertyList)
-                    # break
-                    taskName='Break'
-                    propertyList=[]
-                    propertyList.append(TaskProperty('time',str(1)))
-                    self.currentTask.addNewSubtask(taskName,propertyList)
-                self.updateTaskDisplay()
+                if reply != QMessageBox.Cancel:
+                    self.currentTask.clear()
+                    for i in range(numTarget):
+                        # cue
+                        taskName='Cue'
+                        propertyList=[]
+                        propertyList.append(TaskProperty('time',str(1)))
+                        propertyList.append(TaskProperty('target', str(targetOrder[i]+1)))
+                        self.currentTask.addNewSubtask(taskName,propertyList)
+                        # flash
+                        taskName='Flash'
+                        propertyList=[]
+                        propertyList.append(TaskProperty('time',str(6)))
+                        propertyList.append(TaskProperty('method',inputValue))
+                        propertyList.append(TaskProperty('target',str(targetOrder[i]+1)))
+                        self.currentTask.addNewSubtask(taskName,propertyList)
+                        # break
+                        taskName='Break'
+                        propertyList=[]
+                        propertyList.append(TaskProperty('time',str(1)))
+                        self.currentTask.addNewSubtask(taskName,propertyList)
+                    self.updateTaskDisplay()
     def addTaskButtonFun(self):
         self.editSubtaskWindow=editSubtaskWindow(methodList=self.methodList)
         self.editSubtaskWindow.subTask_signal.connect(self.addSubtask)
