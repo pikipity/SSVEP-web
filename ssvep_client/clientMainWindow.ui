@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>684</width>
-    <height>683</height>
+    <height>672</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -126,22 +126,21 @@
           <height>41</height>
          </rect>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Server Path:</string>
+            <string>Server Selection:</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="serverPathStr">
-           <property name="text">
-            <string>http://8.133.168.160:82/</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
+          <widget class="QComboBox" name="serverSelection">
+           <item>
+            <property name="text">
+             <string>Online Server</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>

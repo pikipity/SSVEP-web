@@ -104,7 +104,8 @@ class Ui(QtWidgets.QMainWindow):
         #
         self.connectServerFlag = self.findChild(QtWidgets.QLineEdit, 'connectServerFlag')
         self.connectServerFlag.setText('Disconnected')
-        self.serverPathDisplay = self.findChild(QtWidgets.QLineEdit, 'serverPathStr')
+        self.serverSelection = self.findChild(QtWidgets.QComboBox,'serverSelection')
+        self.serverPathDir = {'Online Server':'http://8.133.168.160:82/'}
         self.connectButton = self.findChild(QtWidgets.QPushButton, 'connectButton')
         self.connectButton.clicked.connect(self.connectButtonFun)
         self.disconnectButton = self.findChild(QtWidgets.QPushButton, 'disconnectButton')
@@ -165,7 +166,7 @@ class Ui(QtWidgets.QMainWindow):
             self.consoleOutput.setPlainText(self.consoleOutputText)
         
     def connectButtonFun(self):
-        self.server_path=self.serverPathDisplay.text()
+        self.server_path=self.serverPathDir[self.serverSelection.currentText()]
         try:
             self.sio.connect(self.server_path)
         except:
