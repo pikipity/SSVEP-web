@@ -14,6 +14,8 @@ import subprocess
 
 from clockClass import clockClass
 from editTask import editTaskWindow
+
+os.chdir(sys._MEIPASS)
         
 class Ui(QtWidgets.QMainWindow):
     connect_signal = pyqtSignal()

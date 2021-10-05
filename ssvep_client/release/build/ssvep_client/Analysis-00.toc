@@ -1,0 +1,2673 @@
+(['ssvep_client.py'],
+ ['D:\\Github\\SSVEP-web\\ssvep_client',
+  'D:\\Github\\SSVEP-web\\ssvep_client\\release'],
+ ['codecs'],
+ ['C:\\Program Files '
+  '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
+  'C:\\Program Files '
+  '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks\\__pycache__',
+  'C:\\Program Files '
+  '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\rthooks',
+  'C:\\Program Files '
+  '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\rthooks\\__pycache__',
+  'C:\\Program Files '
+  '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks'],
+ {},
+ [],
+ [],
+ False,
+ False,
+ False,
+ '3.9.7 (default, Sep 16 2021, 16:59:28) [MSC v.1916 64 bit (AMD64)]',
+ [('pyi_rth_pkgutil',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pyqt5',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyqt5.py',
+   'PYSOURCE'),
+  ('pyi_rth_certifi',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\rthooks\\pyi_rth_certifi.py',
+   'PYSOURCE'),
+  ('ssvep_client',
+   'D:\\Github\\SSVEP-web\\ssvep_client\\ssvep_client.py',
+   'PYSOURCE')],
+ [('ssl',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ssl.py',
+   'PYMODULE'),
+  ('calendar',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\calendar.py',
+   'PYMODULE'),
+  ('argparse',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\argparse.py',
+   'PYMODULE'),
+  ('textwrap',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\textwrap.py',
+   'PYMODULE'),
+  ('shutil',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\shutil.py',
+   'PYMODULE'),
+  ('zipfile',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\zipfile.py',
+   'PYMODULE'),
+  ('py_compile',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\py_compile.py',
+   'PYMODULE'),
+  ('ntpath',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ntpath.py',
+   'PYMODULE'),
+  ('string',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\string.py',
+   'PYMODULE'),
+  ('genericpath',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\genericpath.py',
+   'PYMODULE'),
+  ('importlib.machinery',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\machinery.py',
+   'PYMODULE'),
+  ('importlib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\__init__.py',
+   'PYMODULE'),
+  ('importlib._common',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\_common.py',
+   'PYMODULE'),
+  ('tempfile',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\tempfile.py',
+   'PYMODULE'),
+  ('random',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\random.py',
+   'PYMODULE'),
+  ('statistics',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\statistics.py',
+   'PYMODULE'),
+  ('decimal',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\decimal.py',
+   'PYMODULE'),
+  ('_pydecimal',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_pydecimal.py',
+   'PYMODULE'),
+  ('contextvars',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\contextvars.py',
+   'PYMODULE'),
+  ('fractions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\fractions.py',
+   'PYMODULE'),
+  ('numbers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\numbers.py',
+   'PYMODULE'),
+  ('hashlib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\hashlib.py',
+   'PYMODULE'),
+  ('logging',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\logging\\__init__.py',
+   'PYMODULE'),
+  ('bisect',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\bisect.py',
+   'PYMODULE'),
+  ('pathlib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pathlib.py',
+   'PYMODULE'),
+  ('urllib.parse',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\urllib\\parse.py',
+   'PYMODULE'),
+  ('urllib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\urllib\\__init__.py',
+   'PYMODULE'),
+  ('importlib.abc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\abc.py',
+   'PYMODULE'),
+  ('typing',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\typing.py',
+   'PYMODULE'),
+  ('importlib._bootstrap',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\_bootstrap.py',
+   'PYMODULE'),
+  ('importlib._bootstrap_external',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\_bootstrap_external.py',
+   'PYMODULE'),
+  ('importlib.metadata',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\metadata.py',
+   'PYMODULE'),
+  ('configparser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\configparser.py',
+   'PYMODULE'),
+  ('email',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\__init__.py',
+   'PYMODULE'),
+  ('email.parser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\parser.py',
+   'PYMODULE'),
+  ('email._policybase',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\_policybase.py',
+   'PYMODULE'),
+  ('email.utils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\utils.py',
+   'PYMODULE'),
+  ('email._parseaddr',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\_parseaddr.py',
+   'PYMODULE'),
+  ('email.feedparser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\feedparser.py',
+   'PYMODULE'),
+  ('email.message',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\message.py',
+   'PYMODULE'),
+  ('email.policy',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\policy.py',
+   'PYMODULE'),
+  ('email.contentmanager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\contentmanager.py',
+   'PYMODULE'),
+  ('email.quoprimime',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\quoprimime.py',
+   'PYMODULE'),
+  ('email.headerregistry',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\headerregistry.py',
+   'PYMODULE'),
+  ('email.iterators',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\iterators.py',
+   'PYMODULE'),
+  ('email.generator',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\generator.py',
+   'PYMODULE'),
+  ('email._encoded_words',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\_encoded_words.py',
+   'PYMODULE'),
+  ('quopri',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\quopri.py',
+   'PYMODULE'),
+  ('getopt',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\getopt.py',
+   'PYMODULE'),
+  ('uu',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\uu.py',
+   'PYMODULE'),
+  ('optparse',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\optparse.py',
+   'PYMODULE'),
+  ('email._header_value_parser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\_header_value_parser.py',
+   'PYMODULE'),
+  ('email.header',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\header.py',
+   'PYMODULE'),
+  ('email.base64mime',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\base64mime.py',
+   'PYMODULE'),
+  ('email.charset',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\charset.py',
+   'PYMODULE'),
+  ('email.encoders',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\encoders.py',
+   'PYMODULE'),
+  ('email.errors',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\email\\errors.py',
+   'PYMODULE'),
+  ('csv',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\csv.py',
+   'PYMODULE'),
+  ('tokenize',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\tokenize.py',
+   'PYMODULE'),
+  ('token',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\token.py',
+   'PYMODULE'),
+  ('contextlib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\contextlib.py',
+   'PYMODULE'),
+  ('threading',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\threading.py',
+   'PYMODULE'),
+  ('_threading_local',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_threading_local.py',
+   'PYMODULE'),
+  ('struct',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\struct.py',
+   'PYMODULE'),
+  ('posixpath',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\posixpath.py',
+   'PYMODULE'),
+  ('importlib.util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\util.py',
+   'PYMODULE'),
+  ('tarfile',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\tarfile.py',
+   'PYMODULE'),
+  ('gzip',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\gzip.py',
+   'PYMODULE'),
+  ('_compression',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_compression.py',
+   'PYMODULE'),
+  ('lzma',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\lzma.py',
+   'PYMODULE'),
+  ('bz2',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\bz2.py',
+   'PYMODULE'),
+  ('fnmatch',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\fnmatch.py',
+   'PYMODULE'),
+  ('stat',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\stat.py',
+   'PYMODULE'),
+  ('copy',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\copy.py',
+   'PYMODULE'),
+  ('gettext',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\gettext.py',
+   'PYMODULE'),
+  ('datetime',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\datetime.py',
+   'PYMODULE'),
+  ('_strptime',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_strptime.py',
+   'PYMODULE'),
+  ('base64',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\base64.py',
+   'PYMODULE'),
+  ('socket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\socket.py',
+   'PYMODULE'),
+  ('selectors',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\selectors.py',
+   'PYMODULE'),
+  ('inspect',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\inspect.py',
+   'PYMODULE'),
+  ('dis',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\dis.py',
+   'PYMODULE'),
+  ('opcode',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\opcode.py',
+   'PYMODULE'),
+  ('ast',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ast.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_spawn_posix',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\popen_spawn_posix.py',
+   'PYMODULE'),
+  ('multiprocessing.resource_tracker',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\resource_tracker.py',
+   'PYMODULE'),
+  ('signal',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\signal.py',
+   'PYMODULE'),
+  ('multiprocessing.util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\util.py',
+   'PYMODULE'),
+  ('multiprocessing.forkserver',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\forkserver.py',
+   'PYMODULE'),
+  ('multiprocessing.connection',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\connection.py',
+   'PYMODULE'),
+  ('multiprocessing.resource_sharer',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\resource_sharer.py',
+   'PYMODULE'),
+  ('xmlrpc.client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xmlrpc\\client.py',
+   'PYMODULE'),
+  ('xmlrpc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xmlrpc\\__init__.py',
+   'PYMODULE'),
+  ('xml.parsers.expat',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\parsers\\expat.py',
+   'PYMODULE'),
+  ('xml.parsers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\parsers\\__init__.py',
+   'PYMODULE'),
+  ('xml',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.expatreader',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\sax\\expatreader.py',
+   'PYMODULE'),
+  ('xml.sax.saxutils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\sax\\saxutils.py',
+   'PYMODULE'),
+  ('urllib.request',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\urllib\\request.py',
+   'PYMODULE'),
+  ('getpass',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\getpass.py',
+   'PYMODULE'),
+  ('nturl2path',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\nturl2path.py',
+   'PYMODULE'),
+  ('ftplib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ftplib.py',
+   'PYMODULE'),
+  ('netrc',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\netrc.py',
+   'PYMODULE'),
+  ('shlex',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\shlex.py',
+   'PYMODULE'),
+  ('mimetypes',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\mimetypes.py',
+   'PYMODULE'),
+  ('http.cookiejar',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\http\\cookiejar.py',
+   'PYMODULE'),
+  ('http',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\http\\__init__.py',
+   'PYMODULE'),
+  ('urllib.response',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\urllib\\response.py',
+   'PYMODULE'),
+  ('urllib.error',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\urllib\\error.py',
+   'PYMODULE'),
+  ('xml.sax',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\sax\\__init__.py',
+   'PYMODULE'),
+  ('xml.sax.handler',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\sax\\handler.py',
+   'PYMODULE'),
+  ('xml.sax._exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\sax\\_exceptions.py',
+   'PYMODULE'),
+  ('xml.sax.xmlreader',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\sax\\xmlreader.py',
+   'PYMODULE'),
+  ('http.client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\http\\client.py',
+   'PYMODULE'),
+  ('hmac',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\hmac.py',
+   'PYMODULE'),
+  ('multiprocessing.process',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\process.py',
+   'PYMODULE'),
+  ('multiprocessing.context',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\context.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_forkserver',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\popen_forkserver.py',
+   'PYMODULE'),
+  ('multiprocessing.sharedctypes',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\sharedctypes.py',
+   'PYMODULE'),
+  ('multiprocessing.heap',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\heap.py',
+   'PYMODULE'),
+  ('ctypes',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\__init__.py',
+   'PYMODULE'),
+  ('ctypes._endian',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('multiprocessing.pool',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\pool.py',
+   'PYMODULE'),
+  ('multiprocessing.dummy',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\dummy\\__init__.py',
+   'PYMODULE'),
+  ('multiprocessing.dummy.connection',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\dummy\\connection.py',
+   'PYMODULE'),
+  ('queue',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\queue.py',
+   'PYMODULE'),
+  ('multiprocessing.queues',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\queues.py',
+   'PYMODULE'),
+  ('multiprocessing.synchronize',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\synchronize.py',
+   'PYMODULE'),
+  ('multiprocessing.managers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\managers.py',
+   'PYMODULE'),
+  ('multiprocessing.shared_memory',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\shared_memory.py',
+   'PYMODULE'),
+  ('secrets',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\secrets.py',
+   'PYMODULE'),
+  ('multiprocessing.reduction',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\reduction.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_fork',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\popen_fork.py',
+   'PYMODULE'),
+  ('multiprocessing.popen_spawn_win32',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\popen_spawn_win32.py',
+   'PYMODULE'),
+  ('multiprocessing.spawn',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\spawn.py',
+   'PYMODULE'),
+  ('runpy',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\runpy.py',
+   'PYMODULE'),
+  ('pkgutil',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pkgutil.py',
+   'PYMODULE'),
+  ('zipimport',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\zipimport.py',
+   'PYMODULE'),
+  ('multiprocessing',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\multiprocessing\\__init__.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_py_abc.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\stringprep.py',
+   'PYMODULE'),
+  ('editTask', 'D:\\Github\\SSVEP-web\\ssvep_client\\editTask.py', 'PYMODULE'),
+  ('MainTask', 'D:\\Github\\SSVEP-web\\ssvep_client\\MainTask.py', 'PYMODULE'),
+  ('clockClass',
+   'D:\\Github\\SSVEP-web\\ssvep_client\\clockClass.py',
+   'PYMODULE'),
+  ('subprocess',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\subprocess.py',
+   'PYMODULE'),
+  ('pickle',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pickle.py',
+   'PYMODULE'),
+  ('pprint',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pprint.py',
+   'PYMODULE'),
+  ('doctest',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\doctest.py',
+   'PYMODULE'),
+  ('unittest',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\__init__.py',
+   'PYMODULE'),
+  ('unittest.async_case',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\async_case.py',
+   'PYMODULE'),
+  ('asyncio',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\__init__.py',
+   'PYMODULE'),
+  ('asyncio.unix_events',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\unix_events.py',
+   'PYMODULE'),
+  ('asyncio.log',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\log.py',
+   'PYMODULE'),
+  ('asyncio.windows_events',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\windows_events.py',
+   'PYMODULE'),
+  ('asyncio.windows_utils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\windows_utils.py',
+   'PYMODULE'),
+  ('asyncio.selector_events',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\selector_events.py',
+   'PYMODULE'),
+  ('asyncio.proactor_events',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\proactor_events.py',
+   'PYMODULE'),
+  ('asyncio.base_subprocess',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\base_subprocess.py',
+   'PYMODULE'),
+  ('asyncio.threads',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\threads.py',
+   'PYMODULE'),
+  ('asyncio.subprocess',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\subprocess.py',
+   'PYMODULE'),
+  ('asyncio.streams',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\streams.py',
+   'PYMODULE'),
+  ('asyncio.queues',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\queues.py',
+   'PYMODULE'),
+  ('asyncio.runners',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\runners.py',
+   'PYMODULE'),
+  ('asyncio.events',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\events.py',
+   'PYMODULE'),
+  ('asyncio.base_events',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\base_events.py',
+   'PYMODULE'),
+  ('concurrent.futures',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\concurrent\\futures\\__init__.py',
+   'PYMODULE'),
+  ('concurrent.futures.thread',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\concurrent\\futures\\thread.py',
+   'PYMODULE'),
+  ('concurrent.futures.process',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\concurrent\\futures\\process.py',
+   'PYMODULE'),
+  ('concurrent.futures._base',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\concurrent\\futures\\_base.py',
+   'PYMODULE'),
+  ('concurrent',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\concurrent\\__init__.py',
+   'PYMODULE'),
+  ('asyncio.trsock',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\trsock.py',
+   'PYMODULE'),
+  ('asyncio.staggered',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\staggered.py',
+   'PYMODULE'),
+  ('asyncio.tasks',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\tasks.py',
+   'PYMODULE'),
+  ('asyncio.base_tasks',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\base_tasks.py',
+   'PYMODULE'),
+  ('asyncio.locks',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\locks.py',
+   'PYMODULE'),
+  ('asyncio.sslproto',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\sslproto.py',
+   'PYMODULE'),
+  ('asyncio.transports',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\transports.py',
+   'PYMODULE'),
+  ('asyncio.protocols',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\protocols.py',
+   'PYMODULE'),
+  ('asyncio.futures',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\futures.py',
+   'PYMODULE'),
+  ('asyncio.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\exceptions.py',
+   'PYMODULE'),
+  ('asyncio.coroutines',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\coroutines.py',
+   'PYMODULE'),
+  ('asyncio.base_futures',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\base_futures.py',
+   'PYMODULE'),
+  ('asyncio.format_helpers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\format_helpers.py',
+   'PYMODULE'),
+  ('asyncio.constants',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\asyncio\\constants.py',
+   'PYMODULE'),
+  ('unittest.signals',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\signals.py',
+   'PYMODULE'),
+  ('unittest.main',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\main.py',
+   'PYMODULE'),
+  ('unittest.runner',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\runner.py',
+   'PYMODULE'),
+  ('unittest.loader',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\loader.py',
+   'PYMODULE'),
+  ('unittest.suite',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\suite.py',
+   'PYMODULE'),
+  ('unittest.case',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\case.py',
+   'PYMODULE'),
+  ('unittest._log',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\_log.py',
+   'PYMODULE'),
+  ('unittest.result',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\result.py',
+   'PYMODULE'),
+  ('unittest.util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\unittest\\util.py',
+   'PYMODULE'),
+  ('pdb',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pdb.py',
+   'PYMODULE'),
+  ('pydoc',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pydoc.py',
+   'PYMODULE'),
+  ('webbrowser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\webbrowser.py',
+   'PYMODULE'),
+  ('http.server',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\http\\server.py',
+   'PYMODULE'),
+  ('socketserver',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\socketserver.py',
+   'PYMODULE'),
+  ('html',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\html\\__init__.py',
+   'PYMODULE'),
+  ('html.entities',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\html\\entities.py',
+   'PYMODULE'),
+  ('pydoc_data.topics',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pydoc_data\\topics.py',
+   'PYMODULE'),
+  ('pydoc_data',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\pydoc_data\\__init__.py',
+   'PYMODULE'),
+  ('tty',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\tty.py',
+   'PYMODULE'),
+  ('sysconfig',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\sysconfig.py',
+   'PYMODULE'),
+  ('_aix_support',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_aix_support.py',
+   'PYMODULE'),
+  ('_bootsubprocess',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_bootsubprocess.py',
+   'PYMODULE'),
+  ('_osx_support',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_osx_support.py',
+   'PYMODULE'),
+  ('distutils.log',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\log.py',
+   'PYMODULE'),
+  ('distutils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\__init__.py',
+   'PYMODULE'),
+  ('distutils.ccompiler',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\ccompiler.py',
+   'PYMODULE'),
+  ('distutils.fancy_getopt',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\fancy_getopt.py',
+   'PYMODULE'),
+  ('distutils.debug',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\debug.py',
+   'PYMODULE'),
+  ('distutils.util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\util.py',
+   'PYMODULE'),
+  ('distutils.filelist',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\filelist.py',
+   'PYMODULE'),
+  ('distutils.dep_util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\dep_util.py',
+   'PYMODULE'),
+  ('distutils.dir_util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\dir_util.py',
+   'PYMODULE'),
+  ('distutils.file_util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\file_util.py',
+   'PYMODULE'),
+  ('distutils.spawn',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\spawn.py',
+   'PYMODULE'),
+  ('distutils.errors',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\errors.py',
+   'PYMODULE'),
+  ('distutils.sysconfig',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\sysconfig.py',
+   'PYMODULE'),
+  ('distutils.text_file',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\distutils\\text_file.py',
+   'PYMODULE'),
+  ('platform',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\platform.py',
+   'PYMODULE'),
+  ('plistlib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\plistlib.py',
+   'PYMODULE'),
+  ('glob',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\glob.py',
+   'PYMODULE'),
+  ('code',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\code.py',
+   'PYMODULE'),
+  ('codeop',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\codeop.py',
+   'PYMODULE'),
+  ('bdb',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\bdb.py',
+   'PYMODULE'),
+  ('cmd',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\cmd.py',
+   'PYMODULE'),
+  ('difflib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\difflib.py',
+   'PYMODULE'),
+  ('__future__',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\__future__.py',
+   'PYMODULE'),
+  ('_compat_pickle',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\_compat_pickle.py',
+   'PYMODULE'),
+  ('pylsl',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\pylsl\\__init__.py',
+   'PYMODULE'),
+  ('pylsl.version',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\pylsl\\version.py',
+   'PYMODULE'),
+  ('pylsl.pylsl',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\pylsl\\pylsl.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\util.py',
+   'PYMODULE'),
+  ('ctypes._aix',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\_aix.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ctypes\\macholib\\framework.py',
+   'PYMODULE'),
+  ('os',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\os.py',
+   'PYMODULE'),
+  ('PyQt5.uic',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\__init__.py',
+   'PYMODULE'),
+  ('PyQt5.uic.objcreator',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\objcreator.py',
+   'PYMODULE'),
+  ('PyQt5.uic.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\exceptions.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Loader.loader',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Loader\\loader.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Loader',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Loader\\__init__.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Loader.qobjectcreator',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Loader\\qobjectcreator.py',
+   'PYMODULE'),
+  ('PyQt5.uic.uiparser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\uiparser.py',
+   'PYMODULE'),
+  ('PyQt5.uic.properties',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\properties.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v3.ascii_upper',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v3\\ascii_upper.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v3',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v3\\__init__.py',
+   'PYMODULE'),
+  ('PyQt5.uic.icon_cache',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\icon_cache.py',
+   'PYMODULE'),
+  ('xml.etree.ElementTree',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\etree\\ElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.cElementTree',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\etree\\cElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.ElementInclude',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\etree\\ElementInclude.py',
+   'PYMODULE'),
+  ('xml.etree.ElementPath',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\etree\\ElementPath.py',
+   'PYMODULE'),
+  ('xml.etree',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\xml\\etree\\__init__.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v2.string_io',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v2\\string_io.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v2',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v2\\__init__.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v3.string_io',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v3\\string_io.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler.compiler',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\compiler.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler.qobjectcreator',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\qobjectcreator.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v2.as_string',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v2\\as_string.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v3.as_string',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v3\\as_string.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler.qtproxies',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\qtproxies.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v2.proxy_base',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v2\\proxy_base.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler.proxy_metaclass',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\proxy_metaclass.py',
+   'PYMODULE'),
+  ('PyQt5.uic.port_v3.proxy_base',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\port_v3\\proxy_base.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler.misc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\misc.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler.indenter',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\indenter.py',
+   'PYMODULE'),
+  ('PyQt5.uic.Compiler',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\Compiler\\__init__.py',
+   'PYMODULE'),
+  ('PyQt5',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\__init__.py',
+   'PYMODULE'),
+  ('socketio',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\__init__.py',
+   'PYMODULE'),
+  ('socketio.asgi',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asgi.py',
+   'PYMODULE'),
+  ('engineio',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\__init__.py',
+   'PYMODULE'),
+  ('engineio.async_drivers.tornado',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\async_drivers\\tornado.py',
+   'PYMODULE'),
+  ('engineio.async_drivers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\async_drivers\\__init__.py',
+   'PYMODULE'),
+  ('engineio.async_drivers.asgi',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\async_drivers\\asgi.py',
+   'PYMODULE'),
+  ('engineio.static_files',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\static_files.py',
+   'PYMODULE'),
+  ('engineio.asyncio_client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\asyncio_client.py',
+   'PYMODULE'),
+  ('aiohttp',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\__init__.py',
+   'PYMODULE'),
+  ('aiohttp.worker',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\worker.py',
+   'PYMODULE'),
+  ('aiohttp.web_log',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_log.py',
+   'PYMODULE'),
+  ('aiohttp.web_response',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_response.py',
+   'PYMODULE'),
+  ('aiohttp.typedefs',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\typedefs.py',
+   'PYMODULE'),
+  ('yarl',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\yarl\\__init__.py',
+   'PYMODULE'),
+  ('yarl._url',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\yarl\\_url.py',
+   'PYMODULE'),
+  ('yarl._quoting',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\yarl\\_quoting.py',
+   'PYMODULE'),
+  ('yarl._quoting_py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\yarl\\_quoting_py.py',
+   'PYMODULE'),
+  ('idna',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\idna\\__init__.py',
+   'PYMODULE'),
+  ('idna.intranges',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\idna\\intranges.py',
+   'PYMODULE'),
+  ('idna.core',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\idna\\core.py',
+   'PYMODULE'),
+  ('idna.uts46data',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\idna\\uts46data.py',
+   'PYMODULE'),
+  ('idna.idnadata',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\idna\\idnadata.py',
+   'PYMODULE'),
+  ('idna.package_data',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\idna\\package_data.py',
+   'PYMODULE'),
+  ('ipaddress',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\ipaddress.py',
+   'PYMODULE'),
+  ('multidict',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\multidict\\__init__.py',
+   'PYMODULE'),
+  ('multidict._multidict_py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\multidict\\_multidict_py.py',
+   'PYMODULE'),
+  ('multidict._compat',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\multidict\\_compat.py',
+   'PYMODULE'),
+  ('multidict._abc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\multidict\\_abc.py',
+   'PYMODULE'),
+  ('http.cookies',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\http\\cookies.py',
+   'PYMODULE'),
+  ('json',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\json\\__init__.py',
+   'PYMODULE'),
+  ('json.encoder',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\json\\encoder.py',
+   'PYMODULE'),
+  ('json.decoder',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\json\\decoder.py',
+   'PYMODULE'),
+  ('json.scanner',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\json\\scanner.py',
+   'PYMODULE'),
+  ('aiohttp.web_request',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_request.py',
+   'PYMODULE'),
+  ('aiohttp.web_urldispatcher',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_urldispatcher.py',
+   'PYMODULE'),
+  ('aiohttp.web_routedef',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_routedef.py',
+   'PYMODULE'),
+  ('aiohttp.web_fileresponse',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_fileresponse.py',
+   'PYMODULE'),
+  ('typing_extensions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\typing_extensions.py',
+   'PYMODULE'),
+  ('aiohttp.web_protocol',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_protocol.py',
+   'PYMODULE'),
+  ('aiohttp.web_server',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_server.py',
+   'PYMODULE'),
+  ('aiohttp.tcp_helpers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\tcp_helpers.py',
+   'PYMODULE'),
+  ('aiohttp.log',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\log.py',
+   'PYMODULE'),
+  ('aiohttp.base_protocol',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\base_protocol.py',
+   'PYMODULE'),
+  ('aiohttp.web_exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_exceptions.py',
+   'PYMODULE'),
+  ('aiohttp.http_writer',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\http_writer.py',
+   'PYMODULE'),
+  ('aiohttp.http_parser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\http_parser.py',
+   'PYMODULE'),
+  ('aiohttp.http_exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\http_exceptions.py',
+   'PYMODULE'),
+  ('attr',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\__init__.py',
+   'PYMODULE'),
+  ('attr._next_gen',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_next_gen.py',
+   'PYMODULE'),
+  ('attr._version_info',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_version_info.py',
+   'PYMODULE'),
+  ('attr._make',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_make.py',
+   'PYMODULE'),
+  ('attr._compat',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_compat.py',
+   'PYMODULE'),
+  ('uuid',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\uuid.py',
+   'PYMODULE'),
+  ('attr._funcs',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_funcs.py',
+   'PYMODULE'),
+  ('attr._cmp',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_cmp.py',
+   'PYMODULE'),
+  ('attr.validators',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\validators.py',
+   'PYMODULE'),
+  ('attr.filters',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\filters.py',
+   'PYMODULE'),
+  ('attr.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\exceptions.py',
+   'PYMODULE'),
+  ('attr.converters',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\converters.py',
+   'PYMODULE'),
+  ('attr.setters',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\setters.py',
+   'PYMODULE'),
+  ('attr._config',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\attr\\_config.py',
+   'PYMODULE'),
+  ('aiohttp.abc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\abc.py',
+   'PYMODULE'),
+  ('aiohttp.web_app',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_app.py',
+   'PYMODULE'),
+  ('aiohttp.web_middlewares',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_middlewares.py',
+   'PYMODULE'),
+  ('aiohttp.frozenlist',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\frozenlist.py',
+   'PYMODULE'),
+  ('aiohttp.web',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web.py',
+   'PYMODULE'),
+  ('aiohttp.web_ws',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_ws.py',
+   'PYMODULE'),
+  ('async_timeout',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\async_timeout\\__init__.py',
+   'PYMODULE'),
+  ('aiohttp.web_runner',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\web_runner.py',
+   'PYMODULE'),
+  ('aiohttp.tracing',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\tracing.py',
+   'PYMODULE'),
+  ('aiohttp.client_reqrep',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\client_reqrep.py',
+   'PYMODULE'),
+  ('aiohttp.connector',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\connector.py',
+   'PYMODULE'),
+  ('aiohttp.locks',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\locks.py',
+   'PYMODULE'),
+  ('aiohttp.client_proto',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\client_proto.py',
+   'PYMODULE'),
+  ('chardet',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\__init__.py',
+   'PYMODULE'),
+  ('chardet.version',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\version.py',
+   'PYMODULE'),
+  ('chardet.enums',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\enums.py',
+   'PYMODULE'),
+  ('chardet.universaldetector',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\universaldetector.py',
+   'PYMODULE'),
+  ('chardet.sbcsgroupprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\sbcsgroupprober.py',
+   'PYMODULE'),
+  ('chardet.sbcharsetprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\sbcharsetprober.py',
+   'PYMODULE'),
+  ('chardet.charsetprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\charsetprober.py',
+   'PYMODULE'),
+  ('chardet.langturkishmodel',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\langturkishmodel.py',
+   'PYMODULE'),
+  ('chardet.langthaimodel',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\langthaimodel.py',
+   'PYMODULE'),
+  ('chardet.langrussianmodel',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\langrussianmodel.py',
+   'PYMODULE'),
+  ('chardet.langhebrewmodel',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\langhebrewmodel.py',
+   'PYMODULE'),
+  ('chardet.langgreekmodel',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\langgreekmodel.py',
+   'PYMODULE'),
+  ('chardet.langbulgarianmodel',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\langbulgarianmodel.py',
+   'PYMODULE'),
+  ('chardet.hebrewprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\hebrewprober.py',
+   'PYMODULE'),
+  ('chardet.mbcsgroupprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\mbcsgroupprober.py',
+   'PYMODULE'),
+  ('chardet.euctwprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\euctwprober.py',
+   'PYMODULE'),
+  ('chardet.mbcssm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\mbcssm.py',
+   'PYMODULE'),
+  ('chardet.chardistribution',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\chardistribution.py',
+   'PYMODULE'),
+  ('chardet.jisfreq',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\jisfreq.py',
+   'PYMODULE'),
+  ('chardet.big5freq',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\big5freq.py',
+   'PYMODULE'),
+  ('chardet.gb2312freq',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\gb2312freq.py',
+   'PYMODULE'),
+  ('chardet.euckrfreq',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\euckrfreq.py',
+   'PYMODULE'),
+  ('chardet.euctwfreq',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\euctwfreq.py',
+   'PYMODULE'),
+  ('chardet.codingstatemachine',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\codingstatemachine.py',
+   'PYMODULE'),
+  ('chardet.mbcharsetprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\mbcharsetprober.py',
+   'PYMODULE'),
+  ('chardet.big5prober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\big5prober.py',
+   'PYMODULE'),
+  ('chardet.cp949prober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\cp949prober.py',
+   'PYMODULE'),
+  ('chardet.euckrprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\euckrprober.py',
+   'PYMODULE'),
+  ('chardet.gb2312prober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\gb2312prober.py',
+   'PYMODULE'),
+  ('chardet.eucjpprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\eucjpprober.py',
+   'PYMODULE'),
+  ('chardet.jpcntx',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\jpcntx.py',
+   'PYMODULE'),
+  ('chardet.sjisprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\sjisprober.py',
+   'PYMODULE'),
+  ('chardet.utf8prober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\utf8prober.py',
+   'PYMODULE'),
+  ('chardet.latin1prober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\latin1prober.py',
+   'PYMODULE'),
+  ('chardet.escprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\escprober.py',
+   'PYMODULE'),
+  ('chardet.escsm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\escsm.py',
+   'PYMODULE'),
+  ('chardet.charsetgroupprober',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\chardet\\charsetgroupprober.py',
+   'PYMODULE'),
+  ('aiohttp.client_exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\client_exceptions.py',
+   'PYMODULE'),
+  ('aiohttp.streams',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\streams.py',
+   'PYMODULE'),
+  ('aiohttp.signals',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\signals.py',
+   'PYMODULE'),
+  ('aiohttp.resolver',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\resolver.py',
+   'PYMODULE'),
+  ('aiohttp.payload_streamer',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\payload_streamer.py',
+   'PYMODULE'),
+  ('aiohttp.payload',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\payload.py',
+   'PYMODULE'),
+  ('aiohttp.helpers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\helpers.py',
+   'PYMODULE'),
+  ('cgi',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\cgi.py',
+   'PYMODULE'),
+  ('aiohttp.formdata',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\formdata.py',
+   'PYMODULE'),
+  ('aiohttp.cookiejar',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\cookiejar.py',
+   'PYMODULE'),
+  ('aiohttp.client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\client.py',
+   'PYMODULE'),
+  ('aiohttp.http_websocket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\http_websocket.py',
+   'PYMODULE'),
+  ('aiohttp.client_ws',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\client_ws.py',
+   'PYMODULE'),
+  ('aiohttp.http',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\http.py',
+   'PYMODULE'),
+  ('aiohttp.multipart',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\multipart.py',
+   'PYMODULE'),
+  ('aiohttp.hdrs',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\hdrs.py',
+   'PYMODULE'),
+  ('engineio.asyncio_server',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\asyncio_server.py',
+   'PYMODULE'),
+  ('engineio.asyncio_socket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\asyncio_socket.py',
+   'PYMODULE'),
+  ('engineio.server',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\server.py',
+   'PYMODULE'),
+  ('engineio.socket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\socket.py',
+   'PYMODULE'),
+  ('engineio.middleware',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\middleware.py',
+   'PYMODULE'),
+  ('engineio.client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\client.py',
+   'PYMODULE'),
+  ('websocket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\__init__.py',
+   'PYMODULE'),
+  ('websocket._socket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_socket.py',
+   'PYMODULE'),
+  ('websocket._utils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_utils.py',
+   'PYMODULE'),
+  ('websocket._ssl_compat',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_ssl_compat.py',
+   'PYMODULE'),
+  ('websocket._logging',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_logging.py',
+   'PYMODULE'),
+  ('websocket._exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_exceptions.py',
+   'PYMODULE'),
+  ('websocket._core',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_core.py',
+   'PYMODULE'),
+  ('websocket._http',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_http.py',
+   'PYMODULE'),
+  ('websocket._url',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_url.py',
+   'PYMODULE'),
+  ('websocket._handshake',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_handshake.py',
+   'PYMODULE'),
+  ('websocket._cookiejar',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_cookiejar.py',
+   'PYMODULE'),
+  ('websocket._app',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_app.py',
+   'PYMODULE'),
+  ('websocket._abnf',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\websocket\\_abnf.py',
+   'PYMODULE'),
+  ('requests',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\__init__.py',
+   'PYMODULE'),
+  ('requests.status_codes',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\status_codes.py',
+   'PYMODULE'),
+  ('requests.structures',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\structures.py',
+   'PYMODULE'),
+  ('requests.compat',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\compat.py',
+   'PYMODULE'),
+  ('requests.api',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\api.py',
+   'PYMODULE'),
+  ('requests.sessions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\sessions.py',
+   'PYMODULE'),
+  ('requests.adapters',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\adapters.py',
+   'PYMODULE'),
+  ('urllib3.contrib.socks',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\contrib\\socks.py',
+   'PYMODULE'),
+  ('urllib3.util.url',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\url.py',
+   'PYMODULE'),
+  ('urllib3.packages.six',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\packages\\six.py',
+   'PYMODULE'),
+  ('urllib3.packages',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\packages\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.packages.ssl_match_hostname',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\packages\\ssl_match_hostname\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.packages.ssl_match_hostname._implementation',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\packages\\ssl_match_hostname\\_implementation.py',
+   'PYMODULE'),
+  ('urllib3.connectionpool',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\connectionpool.py',
+   'PYMODULE'),
+  ('urllib3.util.timeout',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\timeout.py',
+   'PYMODULE'),
+  ('urllib3.util.response',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\response.py',
+   'PYMODULE'),
+  ('urllib3.util.request',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\request.py',
+   'PYMODULE'),
+  ('urllib3.util.queue',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\queue.py',
+   'PYMODULE'),
+  ('urllib3.util.proxy',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\proxy.py',
+   'PYMODULE'),
+  ('urllib3.util.ssl_',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\ssl_.py',
+   'PYMODULE'),
+  ('urllib3.util.ssltransport',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\ssltransport.py',
+   'PYMODULE'),
+  ('urllib3.util.connection',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\connection.py',
+   'PYMODULE'),
+  ('urllib3.util.wait',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\wait.py',
+   'PYMODULE'),
+  ('urllib3.contrib._appengine_environ',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\contrib\\_appengine_environ.py',
+   'PYMODULE'),
+  ('urllib3.request',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\request.py',
+   'PYMODULE'),
+  ('urllib3.filepost',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\filepost.py',
+   'PYMODULE'),
+  ('urllib3.fields',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\fields.py',
+   'PYMODULE'),
+  ('urllib3.connection',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\connection.py',
+   'PYMODULE'),
+  ('urllib3._version',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\_version.py',
+   'PYMODULE'),
+  ('urllib3._collections',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\_collections.py',
+   'PYMODULE'),
+  ('urllib3.util.retry',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\retry.py',
+   'PYMODULE'),
+  ('urllib3.util',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\util\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.response',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\response.py',
+   'PYMODULE'),
+  ('urllib3.poolmanager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\poolmanager.py',
+   'PYMODULE'),
+  ('requests._internal_utils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\_internal_utils.py',
+   'PYMODULE'),
+  ('requests.hooks',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\hooks.py',
+   'PYMODULE'),
+  ('requests.cookies',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\cookies.py',
+   'PYMODULE'),
+  ('requests.auth',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\auth.py',
+   'PYMODULE'),
+  ('requests.models',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\models.py',
+   'PYMODULE'),
+  ('requests.packages',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\packages.py',
+   'PYMODULE'),
+  ('requests.utils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\utils.py',
+   'PYMODULE'),
+  ('requests.certs',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\certs.py',
+   'PYMODULE'),
+  ('certifi',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\certifi\\__init__.py',
+   'PYMODULE'),
+  ('certifi.core',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\certifi\\core.py',
+   'PYMODULE'),
+  ('importlib.resources',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\importlib\\resources.py',
+   'PYMODULE'),
+  ('requests.__version__',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\__version__.py',
+   'PYMODULE'),
+  ('urllib3.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\exceptions.py',
+   'PYMODULE'),
+  ('urllib3.contrib.pyopenssl',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\contrib\\pyopenssl.py',
+   'PYMODULE'),
+  ('urllib3.packages.backports.makefile',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\packages\\backports\\makefile.py',
+   'PYMODULE'),
+  ('urllib3.packages.backports',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\packages\\backports\\__init__.py',
+   'PYMODULE'),
+  ('urllib3.contrib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\contrib\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.version',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\version.py',
+   'PYMODULE'),
+  ('charset_normalizer.models',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\models.py',
+   'PYMODULE'),
+  ('charset_normalizer.cd',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\cd.py',
+   'PYMODULE'),
+  ('charset_normalizer.assets',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\assets\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.utils',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\utils.py',
+   'PYMODULE'),
+  ('charset_normalizer.md',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\md.py',
+   'PYMODULE'),
+  ('charset_normalizer.constant',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\constant.py',
+   'PYMODULE'),
+  ('charset_normalizer.legacy',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\legacy.py',
+   'PYMODULE'),
+  ('charset_normalizer.api',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\charset_normalizer\\api.py',
+   'PYMODULE'),
+  ('requests.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\requests\\exceptions.py',
+   'PYMODULE'),
+  ('urllib3',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\urllib3\\__init__.py',
+   'PYMODULE'),
+  ('engineio.json',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\json.py',
+   'PYMODULE'),
+  ('engineio.payload',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\payload.py',
+   'PYMODULE'),
+  ('engineio.packet',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\packet.py',
+   'PYMODULE'),
+  ('engineio.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\engineio\\exceptions.py',
+   'PYMODULE'),
+  ('socketio.asyncio_aiopika_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_aiopika_manager.py',
+   'PYMODULE'),
+  ('socketio.asyncio_pubsub_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_pubsub_manager.py',
+   'PYMODULE'),
+  ('socketio.asyncio_redis_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_redis_manager.py',
+   'PYMODULE'),
+  ('socketio.asyncio_namespace',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_namespace.py',
+   'PYMODULE'),
+  ('socketio.asyncio_server',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_server.py',
+   'PYMODULE'),
+  ('socketio.asyncio_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_manager.py',
+   'PYMODULE'),
+  ('socketio.asyncio_client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\asyncio_client.py',
+   'PYMODULE'),
+  ('socketio.tornado',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\tornado.py',
+   'PYMODULE'),
+  ('socketio.middleware',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\middleware.py',
+   'PYMODULE'),
+  ('socketio.server',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\server.py',
+   'PYMODULE'),
+  ('socketio.zmq_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\zmq_manager.py',
+   'PYMODULE'),
+  ('socketio.kafka_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\kafka_manager.py',
+   'PYMODULE'),
+  ('socketio.redis_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\redis_manager.py',
+   'PYMODULE'),
+  ('socketio.kombu_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\kombu_manager.py',
+   'PYMODULE'),
+  ('socketio.pubsub_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\pubsub_manager.py',
+   'PYMODULE'),
+  ('socketio.base_manager',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\base_manager.py',
+   'PYMODULE'),
+  ('bidict',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\__init__.py',
+   'PYMODULE'),
+  ('bidict.metadata',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\metadata.py',
+   'PYMODULE'),
+  ('bidict._iter',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_iter.py',
+   'PYMODULE'),
+  ('bidict._typing',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_typing.py',
+   'PYMODULE'),
+  ('bidict._exc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_exc.py',
+   'PYMODULE'),
+  ('bidict._dup',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_dup.py',
+   'PYMODULE'),
+  ('bidict._orderedbidict',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_orderedbidict.py',
+   'PYMODULE'),
+  ('bidict._orderedbase',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_orderedbase.py',
+   'PYMODULE'),
+  ('bidict._named',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_named.py',
+   'PYMODULE'),
+  ('bidict._frozenordered',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_frozenordered.py',
+   'PYMODULE'),
+  ('bidict._frozenbidict',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_frozenbidict.py',
+   'PYMODULE'),
+  ('bidict._delegating',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_delegating.py',
+   'PYMODULE'),
+  ('bidict._bidict',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_bidict.py',
+   'PYMODULE'),
+  ('bidict._mut',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_mut.py',
+   'PYMODULE'),
+  ('bidict._base',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_base.py',
+   'PYMODULE'),
+  ('bidict._abc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\bidict\\_abc.py',
+   'PYMODULE'),
+  ('socketio.client',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\client.py',
+   'PYMODULE'),
+  ('socketio.msgpack_packet',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\msgpack_packet.py',
+   'PYMODULE'),
+  ('socketio.packet',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\packet.py',
+   'PYMODULE'),
+  ('socketio.namespace',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\namespace.py',
+   'PYMODULE'),
+  ('socketio.exceptions',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\socketio\\exceptions.py',
+   'PYMODULE')],
+ [('api-ms-win-crt-heap-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-locale-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-locale-l1-1-0.dll',
+   'BINARY'),
+  ('python39.dll',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\python39.dll',
+   'BINARY'),
+  ('api-ms-win-crt-runtime-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-runtime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('ucrtbase.dll',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\ucrtbase.dll',
+   'BINARY'),
+  ('api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-convert-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-environment-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-environment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-string-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-time-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-time-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l2-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-file-l2-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-localization-l1-2-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-localization-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-memory-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-datetime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-profile-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-util-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-util-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-namedpipe-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-namedpipe-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-2-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-file-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-2-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-synch-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-handle-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-handle-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-debug-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-core-debug-l1-1-0.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qwbmp.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qwbmp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\platforms\\qwindows.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\platforms\\qwindows.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\iconengines\\qsvgicon.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('icuuc58.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\icuuc58.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qjpeg.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qjpeg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'BINARY'),
+  ('icudt58.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\icudt58.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qwebp.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qwebp.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\platforms\\qminimal.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
+  ('opengl32sw.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\opengl32sw.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qtga.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qtga.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qico.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qico.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qgif.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qgif.dll',
+   'BINARY'),
+  ('icuin58.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\icuin58.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\platforms\\qoffscreen.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\platforms\\qoffscreen.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qsvg.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qsvg.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qtiff.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qtiff.dll',
+   'BINARY'),
+  ('PyQt5\\Qt\\plugins\\imageformats\\qicns.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\plugins\\imageformats\\qicns.dll',
+   'BINARY'),
+  ('_decimal',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_hashlib',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('unicodedata',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_lzma',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('select',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_socket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_ssl',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('_multiprocessing',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_multiprocessing.pyd',
+   'EXTENSION'),
+  ('pyexpat',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_ctypes',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_queue',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_queue.pyd',
+   'EXTENSION'),
+  ('_overlapped',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_overlapped.pyd',
+   'EXTENSION'),
+  ('_asyncio',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_asyncio.pyd',
+   'EXTENSION'),
+  ('PyQt5.QtCore',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\QtCore.pyd',
+   'EXTENSION'),
+  ('_elementtree',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_elementtree.pyd',
+   'EXTENSION'),
+  ('PyQt5.QtGui',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\QtGui.pyd',
+   'EXTENSION'),
+  ('PyQt5.QtWidgets',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\QtWidgets.pyd',
+   'EXTENSION'),
+  ('sip',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\sip.pyd',
+   'EXTENSION'),
+  ('yarl._quoting_c',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\yarl\\_quoting_c.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('multidict._multidict',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\multidict\\_multidict.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('aiohttp._http_writer',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\_http_writer.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('aiohttp._http_parser',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\_http_parser.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('_uuid',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\_uuid.pyd',
+   'EXTENSION'),
+  ('aiohttp._frozenlist',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\_frozenlist.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('aiohttp._helpers',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\_helpers.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('aiohttp._websocket',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\aiohttp\\_websocket.cp39-win_amd64.pyd',
+   'EXTENSION'),
+  ('Qt5Core.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Core.dll',
+   'BINARY'),
+  ('Qt5Gui.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Gui.dll',
+   'BINARY'),
+  ('libpng16.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\libpng16.dll',
+   'BINARY'),
+  ('MSVCP140.dll',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\MSVCP140.dll',
+   'BINARY'),
+  ('zlib.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\zlib.dll',
+   'BINARY'),
+  ('api-ms-win-crt-utility-l1-1-0.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\api-ms-win-crt-utility-l1-1-0.dll',
+   'BINARY'),
+  ('Qt5Svg.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Svg.dll',
+   'BINARY'),
+  ('libjpeg.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\libjpeg.dll',
+   'BINARY'),
+  ('Qt5Quick.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Quick.dll',
+   'BINARY'),
+  ('Qt5Qml.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Qml.dll',
+   'BINARY'),
+  ('libcrypto-1_1-x64.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\libcrypto-1_1-x64.dll',
+   'BINARY'),
+  ('libssl-1_1-x64.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\libssl-1_1-x64.dll',
+   'BINARY'),
+  ('libffi-8.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\DLLs\\libffi-8.dll',
+   'BINARY'),
+  ('python3.dll',
+   'C:\\Program Files (x86)\\Anaconda\\envs\\ssvep_client_build\\python3.dll',
+   'BINARY'),
+  ('Qt5Widgets.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Widgets.dll',
+   'BINARY'),
+  ('VCRUNTIME140_1.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('Microsoft.VC90.CRT.manifest',
+   'C:\\WINDOWS\\WinSxS\\Manifests\\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9619_none_08e065a3a84109b0.manifest',
+   'BINARY'),
+  ('msvcr90.dll',
+   'C:\\WINDOWS\\WinSxS\\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9619_none_08e065a3a84109b0\\msvcr90.dll',
+   'BINARY'),
+  ('msvcp90.dll',
+   'C:\\WINDOWS\\WinSxS\\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9619_none_08e065a3a84109b0\\msvcp90.dll',
+   'BINARY'),
+  ('msvcm90.dll',
+   'C:\\WINDOWS\\WinSxS\\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.9619_none_08e065a3a84109b0\\msvcm90.dll',
+   'BINARY'),
+  ('Qt5Network.dll',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\Qt5Network.dll',
+   'BINARY')],
+ [],
+ [],
+ [('base_library.zip',
+   './release/build\\ssvep_client\\base_library.zip',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qtquickwidgets.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qtquickwidgets.cpython-39.pyc',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ja.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_ja.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_it.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qaxcontainer.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qaxcontainer.cpython-39.pyc',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_fr.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_fr.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qaxcontainer.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qaxcontainer.py',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_bg.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qscintilla.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qscintilla.cpython-39.pyc',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qtprintsupport.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qtprintsupport.cpython-39.pyc',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qtwebkit.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qtwebkit.cpython-39.pyc',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_he.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_he.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_de.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_fi.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_en.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_uk.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_es.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_cs.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qtprintsupport.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qtprintsupport.py',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qtcharts.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qtcharts.py',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_gd.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_lv.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_lv.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ar.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\bin\\qt.conf',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\bin\\qt.conf',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_da.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_hu.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qtcharts.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qtcharts.cpython-39.pyc',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\__pycache__\\qtwebenginewidgets.cpython-39.pyc',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\__pycache__\\qtwebenginewidgets.cpython-39.pyc',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qtwebkit.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qtwebkit.py',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qscintilla.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qscintilla.py',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ca.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ko.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qtquickwidgets.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qtquickwidgets.py',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_pl.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PyQt5\\uic\\widget-plugins\\qtwebenginewidgets.py',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\lib\\site-packages\\PyQt5\\uic\\widget-plugins\\qtwebenginewidgets.py',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_ru.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_ru.qm',
+   'DATA'),
+  ('PyQt5\\Qt\\translations\\qtbase_sk.qm',
+   'C:\\Program Files '
+   '(x86)\\Anaconda\\envs\\ssvep_client_build\\Library\\translations\\qtbase_sk.qm',
+   'DATA')],
+ [BindingRedirect(name='Microsoft.VC90.CRT', language=None, arch='amd64', oldVersion=(9, 0, 21022, 8), newVersion=(9, 0, 30729, 9619), publicKeyToken='1fc8b3b9a1e18e3b')])
