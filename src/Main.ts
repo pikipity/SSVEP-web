@@ -93,7 +93,7 @@ class Main extends eui.UILayer {
 
     private socket;
     private connect_flag = false;
-    private server_path = 'http://8.133.168.160:82/'//'http://zewang.site:82/'//'http://127.0.0.1:5001/'
+    private server_path = 'http://zewang.site:82/'//'http://8.133.168.160:82/'//'http://127.0.0.1:5001/'
 
     private onSocketOpen(){
         console.log('Connect')

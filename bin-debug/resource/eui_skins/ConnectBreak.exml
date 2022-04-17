@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.ConnectBreak"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Label text="Connection Break" textColor="0xFF0000" bold="true" size="60" horizontalCenter="0" verticalCenter="0"/>
+	<e:Button id="returnbutton_comp" label="Button" skinName="skins.backButton" right="0" top="0"/>
+</e:Skin>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.UseEnterRoomNumButton"
+	 width="200"
+	height="100" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="200" height="100" x="0" y="0" fillColor="0xFF0000"/>
+	<e:Label text="Use Enter Room" verticalCenter="0" horizontalCenter="0" width="184" textAlign="center" size="20"/>
+</e:Skin>

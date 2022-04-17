@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.EndScene"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Label text="Rest" size="60" horizontalCenter="0" verticalCenter="0" textAlign="center"/>
+	<e:Button id="returnbutton_comp" label="Button" horizontalCenter="0" bottom="125" skinName="skins.returnButton"/>
+	<e:Button id="returnbutton_comp2" label="Button" skinName="skins.backButton" right="1" top="1"/>
+</e:Skin>

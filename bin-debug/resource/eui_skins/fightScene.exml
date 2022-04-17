@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.fightScene"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Group id="flashButton12_area" width="200" height="200" y="798.126" x="1480">
+		<e:Label id="cue_12" textColor="0xFF0000" bold="true" size="50" horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton11_area" width="200" height="200" y="478.126" x="1480">
+		<e:Label id="cue_11" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton10_area" width="200" height="200" y="158.126" x="1480">
+		<e:Label id="cue_10" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton9_area" width="200" height="200" y="798.126" x="1060">
+		<e:Label id="cue_9" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton8_area" width="200" height="200" y="478.126" x="1060">
+		<e:Label id="cue_8" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton5_area" width="200" height="200" y="478.126" x="640">
+		<e:Label id="cue_5" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton6_area" width="200" height="200" y="798.126" x="640">
+		<e:Label id="cue_6" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton7_area" width="200" height="200" y="158.126" x="1060">
+		<e:Label id="cue_7" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton1_area" width="200" height="200" y="158.126" x="220">
+		<e:Label id="cue_1" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton2_area" width="200" height="200" y="478.126" x="220">
+		<e:Label id="cue_2" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton3_area" width="200" height="200" y="798.126" x="220">
+		<e:Label id="cue_3" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="flashButton4_area" width="200" height="200" y="158.126" x="640">
+		<e:Label id="cue_4" textColor="0xFF0000" bold="true" size="50" verticalCenter="0" horizontalCenter="0"/>
+	</e:Group>
+	<e:Group id="clock_area" width="100" height="100" left="0" top="0"/>
+	<e:Group id="trigger_area" width="100" bottom="1" height="100" left="1"/>
+	<e:Rect width="1460" height="50" fillColor="0xFFFFFF" horizontalCenter="0" top="30"/>
+	<e:Label id="feedback_text_67" horizontalCenter="0" top="30" width="1460" height="50" textColor="0x000000" textAlign="left" verticalAlign="middle"/>
+	<e:Button id="backbutton_comp" label="Button" skinName="skins.backButton" right="1" top="1" width="50" height="50"/>
+</e:Skin>

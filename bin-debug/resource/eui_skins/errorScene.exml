@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.errorScene"
+	 width="1920"
+	height="1080" xmlns:e="http://ns.egret.com/eui">
+	<e:Rect width="1920" height="1080" x="0" y="0"/>
+	<e:Label id="error_label" text="Error Game State" textColor="0xFF0000" bold="true" size="60" verticalCenter="0" horizontalCenter="0"/>
+	<e:Button id="returnbutton_comp" label="Button" skinName="skins.backButton" right="1" top="1"/>
+</e:Skin>

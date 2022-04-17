@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="skins.downClock"
+	 width="100"
+	height="100" xmlns:e="http://ns.egret.com/eui">
+	<e:Label id="clock_text" text="Your Turn" y="0" size="15" verticalAlign="middle" textAlign="center" bold="true" height="100" x="0" width="100"/>
+</e:Skin>
