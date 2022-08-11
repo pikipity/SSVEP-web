@@ -1,5 +1,5 @@
 # SSVEP-web
 
-In development
+Under development
 
 [Link](https://pikipity.github.io/SSVEP-web/bin-release/web/0.1/)
